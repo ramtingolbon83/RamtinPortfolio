@@ -23,7 +23,7 @@ The repository is split into distinct, decoupled applications:
 - `contact/`: Advanced lead capturing form with integrated automated SMS alerts.
 
 ### 🚀 Getting Started
-1. Clone the repository: `git clone https://github.com/yourusername/ramtin-portfolio.git`
+1. Clone the repository: `git clone https://github.com/ramtin-2024/RamtinPortfolio.git`
 2. Install dependencies: `pip install -r requirements.txt`
 3. Apply migrations: `python manage.py migrate`
 4. Run the server: `python manage.py runserver`
@@ -47,7 +47,7 @@ The repository is split into distinct, decoupled applications:
 - `contact/`: فرم پیشرفته ثبت درخواست پروژه همراه با سیستم هوشمند ارسال پیامک به توسعه‌دهنده.
 
 ### 🚀 راه‌اندازی پروژه
-۱. کلون کردن مخزن: `git clone https://github.com/yourusername/ramtin-portfolio.git`
+۱. کلون کردن مخزن: `git clone https://github.com/ramtin-2024/RamtinPortfolio.git`
 ۲. نصب کتابخانه‌ها: `pip install -r requirements.txt`
 ۳. اعمال مهاجرت‌ها: `python manage.py migrate`
 ۴. اجرای سرور توسعه: `python manage.py runserver`
