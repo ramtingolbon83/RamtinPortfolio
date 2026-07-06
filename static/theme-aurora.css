@@ -1,0 +1,51 @@
+/* Aurora / Deep Forest — permanent variant (overrides style.css :root tokens) */
+.aurora-theme {
+    --bg: hsl(160, 20%, 3%);
+    --fg: hsl(150, 15%, 96%);
+    --card-bg: hsl(160, 20%, 5%);
+    --primary: hsl(165, 94%, 43%);
+    --primary-fg: hsl(160, 22%, 4%);
+    --secondary: hsl(195, 85%, 45%);
+    --muted: hsl(160, 16%, 9%);
+    --muted-fg: hsl(155, 12%, 68%);
+    --surface: rgba(72, 210, 170, 0.045);
+    --surface-hover: rgba(64, 190, 220, 0.09);
+    --border: rgba(100, 220, 180, 0.1);
+    --border-hi: rgba(90, 210, 200, 0.2);
+    --text-dim: rgba(180, 230, 205, 0.48);
+    --text-soft: rgba(195, 240, 220, 0.72);
+    --text-bright: rgba(240, 255, 248, 0.94);
+    --glass-shadow: 0 16px 48px rgba(0, 24, 18, 0.55);
+    --glass-inset: inset 0 1px 1px rgba(120, 255, 200, 0.12);
+    --orb-opacity: 0.18;
+    --radius: 1rem;
+}
+
+/* Accent tints tied to Aurora primaries (hardcoded hues in style.css) */
+.aurora-theme .service-card__icon,
+.aurora-theme .contact-info-card__icon {
+    background: color-mix(in srgb, var(--primary) 14%, transparent);
+}
+
+.aurora-theme .testimonial-card__glow {
+    background: color-mix(in srgb, var(--primary) 8%, transparent);
+}
+
+.aurora-theme .timeline-dot--active {
+    border-color: var(--primary);
+    box-shadow: 0 0 12px color-mix(in srgb, var(--primary) 58%, transparent);
+}
+
+.aurora-theme .portfolio-card__cat {
+    color: color-mix(in srgb, var(--primary) 78%, transparent);
+}
+
+/* Let Tailwind primary → secondary gradients override style.css fills */
+.aurora-theme .skill__fill,
+.aurora-theme .contact-form__submit {
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+}
+
+.aurora-theme .timeline-item__period--active {
+    color: color-mix(in srgb, var(--primary) 88%, transparent);
+}

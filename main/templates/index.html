@@ -1,0 +1,1003 @@
+{% load static %}
+<!doctype html>
+<html dir="rtl" lang="fa">
+<!-- Mirrored from www.iarsalan.ir/auracv/main-template/index-aurora-onepage.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 05 Jul 2026 16:54:32 GMT -->
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Ramtin Golbon</title>
+  <meta content="AuraCV Aurora variant &mdash; deep forest glassmorphic vCard with neon emerald and ocean cyan accents."
+    name="description" />
+  <meta content="AuraCV" name="author" />
+  <link href="{% static 'style.css' %}" rel="stylesheet" />
+  <link href="{% static 'theme-aurora.css' %}" rel="stylesheet" />
+  <link href="{% static 'tailwind-built.css' %}" rel="stylesheet" />
+</head>
+
+<body class="aurora-theme">
+  <!-- Background Orbs (Aurora — emerald + ocean cyan glow) -->
+  <div aria-hidden="true"
+    class="pointer-events-none fixed z-0 h-[500px] w-[500px] -left-[4%] -top-[6%] animate-orbit rounded-full bg-primary opacity-40 blur-[120px] mix-blend-screen saturate-150">
+  </div>
+  <div aria-hidden="true"
+    class="pointer-events-none fixed z-0 h-[500px] w-[500px] -bottom-[6%] -right-[4%] animate-orbit-reverse rounded-full bg-secondary opacity-40 blur-[120px] mix-blend-screen saturate-150">
+  </div>
+  <div aria-hidden="true"
+    class="pointer-events-none fixed inset-0 z-0 bg-gradient-to-br from-primary/20 from-5% via-transparent via-45% to-secondary/25 to-95%">
+  </div>
+  <div aria-hidden="true"
+    class="pointer-events-none fixed inset-0 z-0 bg-[radial-gradient(ellipse_at_center,transparent_0%,hsl(160_22%_2%_/_0.78)_100%)]">
+  </div>
+  <!-- Mobile Header -->
+  <header
+    class="glass fixed inset-x-0 top-0 z-30 flex items-center justify-between border-b border-border px-4 py-3 lg:hidden">
+    <button aria-label="Open menu"
+      class="flex size-10 items-center justify-center rounded-xl text-muted-fg transition-colors duration-300 hover:text-fg"
+      id="menuBtn" type="button">
+      <svg fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+        viewbox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg">
+        <line x1="3" x2="21" y1="12" y2="12"></line>
+        <line x1="3" x2="21" y1="6" y2="6"></line>
+        <line x1="3" x2="21" y1="18" y2="18"></line>
+      </svg>
+    </button>
+    <span class="font-heading text-sm font-semibold tracking-tight">
+      رامتین گل بن
+    </span>
+    <div aria-hidden="true" class="size-10 shrink-0"></div>
+  </header>
+  <!-- Mobile Sidebar Overlay -->
+  <div
+    class="sidebar-overlay fixed inset-0 z-40 bg-black/60 opacity-0 pointer-events-none backdrop-blur-overlay transition-opacity duration-300"
+    id="sidebarOverlay"></div>
+  <aside
+    class="sidebar-mobile glass fixed inset-y-0 right-0 z-50 flex w-[300px] translate-x-full flex-col gap-6 overflow-y-auto p-6 transition-transform duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] [scrollbar-width:none] [&amp;::-webkit-scrollbar]:hidden"
+    id="sidebarMobile">
+    <button aria-label="Close menu"
+      class="glass-card absolute right-4 top-4 flex size-8 items-center justify-center rounded-lg text-muted-fg"
+      id="closeSidebar" type="button">
+      <svg fill="none" height="16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+        viewbox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg">
+        <line x1="18" x2="6" y1="6" y2="18"></line>
+        <line x1="6" x2="18" y1="6" y2="18"></line>
+      </svg>
+    </button>
+    <div class="rounded-3xl border border-border bg-surface p-1.5">
+      <img alt="Profile"
+        class="aspect-square w-full rounded-xl object-cover opacity-80 grayscale mix-blend-luminosity transition-all duration-700 ease-in-out hover:opacity-100 hover:grayscale-0"
+        src="{% static 'profile.jpg' %}" />
+    </div>
+    <div>
+      <h1 class="px-2 font-heading text-2xl font-bold tracking-tightish">
+        رامتین گل بن
+      </h1>
+      <p class="px-2 text-sm font-medium text-primary opacity-80">
+        توسعه‌دهنده نرم‌افزار (Go / Python) با رویکرد امنیت
+      </p>
+      <p class="px-2 text-xs font-medium text-primary opacity-60 ltr mt-1">
+        Software Developer | Focused on Application Security
+      </p>
+    </div>
+    <div class="flex gap-3 px-2">
+      <a class="glass-card flex size-9 items-center justify-center text-muted-fg transition-colors duration-300 hover:text-primary [&amp;_svg]:size-4"
+        href="https://www.linkedin.com/in/ramtin-golbon" target="_blank">
+        <svg fill="none" height="16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+          stroke-width="2" viewbox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg">
+          <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"></path>
+          <rect height="12" width="4" x="2" y="9"></rect>
+          <circle cx="4" cy="4" r="2"></circle>
+        </svg>
+      </a>
+      <a class="glass-card flex size-9 items-center justify-center text-muted-fg transition-colors duration-300 hover:text-primary [&amp;_svg]:size-4"
+        href="https://github.com/ramtin-2024" target="_blank">
+        <svg fill="none" height="16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+          stroke-width="2" viewbox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+          </path>
+        </svg>
+      </a>
+      <a class="glass-card flex size-9 items-center justify-center text-muted-fg transition-colors duration-300 hover:text-primary [&amp;_svg]:size-4"
+        href="https://x.com/Ramtingolbon" target="_blank">
+        <svg fill="none" height="16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+          stroke-width="2" viewbox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z">
+          </path>
+        </svg>
+      </a>
+      <a class="glass-card flex size-9 items-center justify-center text-muted-fg transition-colors duration-300 hover:text-primary [&amp;_svg]:size-4"
+        href="https://t.me/Ramtin83187" target="_blank">
+        <svg fill="none" height="16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+          stroke-width="2" viewbox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M21.198 2.43a2.242 2.242 0 0 0-1.935-.112L2.37 8.328a2.25 2.25 0 0 0-.127 4.16l4.8 1.637a1 1 0 0 0 1.037-.215l10.155-9.35a.5.5 0 0 1 .678.733l-8.47 8.127a1 1 0 0 0-.27.915l1.6 6.12a2.25 2.25 0 0 0 4.34-.316l3.665-15.145a2.25 2.25 0 0 0-.78-2.144z">
+          </path>
+        </svg>
+      </a>
+      <circle cx="12" cy="12" r="10"></circle>
+      <circle cx="12" cy="12" r="4"></circle>
+      <line x1="21.17" x2="12" y1="8" y2="8"></line>
+      <line x1="3.95" x2="8.54" y1="6.06" y2="14"></line>
+      <line x1="10.88" x2="15.46" y1="21.94" y2="14"></line>
+      </svg>
+      </a>
+    </div>
+    <div class="mt-auto flex flex-col gap-3 px-2">
+      <div class="flex items-center justify-between border-b border-border py-3 text-xs">
+        <span class="font-semibold uppercase tracking-caps text-copy-dim">
+          وضعیت
+        </span>
+        <span class="text-sm text-copy-bright">
+          <span class="ml-2 inline-block size-1.5 rounded-full bg-success shadow-status-dot">
+          </span>
+          در دسترس
+        </span>
+      </div>
+      <div class="flex items-center justify-between border-b border-border py-3 text-xs">
+        <span class="font-semibold uppercase tracking-caps text-copy-dim">
+          مکان
+        </span>
+        <span class="text-sm text-copy-bright"> ایران، گیلان </span>
+      </div>
+      <div class="flex items-center justify-between py-3 text-xs">
+        <span class="font-semibold uppercase tracking-caps text-copy-dim">
+          تجربه
+        </span>
+        <span class="text-sm text-copy-bright"> ۱۴۰۳ - اکنون </span>
+      </div>
+    </div>
+    <button
+      class="glass-card flex w-full items-center justify-center gap-2 rounded-xl py-4 text-sm font-semibold tracking-wide transition-all duration-300 [&amp;&gt;span]:text-lg [&amp;&gt;span]:text-primary"
+      type="button">
+      دانلود CV
+    </button>
+  </aside>
+  <!-- App Wrapper -->
+  <div class="app-wrapper">
+    <div class="app-layout">
+      <!-- ===== Desktop Sidebar ===== -->
+      <aside
+        class="glass sticky top-8 hidden h-[calc(100dvh-4rem)] w-[320px] shrink-0 flex-col gap-6 overflow-y-auto rounded-2xl p-6 [scrollbar-width:none] lg:flex [&amp;::-webkit-scrollbar]:hidden">
+        <div class="rounded-3xl border border-border bg-surface p-1.5">
+          <img alt="Kaelen Voss"
+            class="aspect-square w-full rounded-xl object-cover opacity-80 grayscale mix-blend-luminosity transition-all duration-700 ease-in-out hover:opacity-100 hover:grayscale-0"
+            src="{% static 'profile.jpg' %}" />
+        </div>
+        <div>
+          <h1 class="px-2 font-heading text-2xl font-bold tracking-tightish">
+            رامتین گل بن
+          </h1>
+          <p class="px-2 text-sm font-medium text-primary opacity-80">
+            توسعه‌دهنده نرم‌افزار (Go / Python) با رویکرد امنیت
+          </p>
+          <p class="px-2 text-xs font-medium text-primary opacity-60 ltr mt-1">
+            Software Developer | Focused on Application Security
+          </p>
+        </div>
+        <div class="flex gap-3 px-2">
+          <a class="glass-card flex size-9 items-center justify-center text-muted-fg transition-colors duration-300 hover:text-primary [&amp;_svg]:size-4"
+            href="https://www.linkedin.com/in/ramtin-golbon" target="_blank">
+            <svg fill="none" height="16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+              stroke-width="2" viewbox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg">
+              <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"></path>
+              <rect height="12" width="4" x="2" y="9"></rect>
+              <circle cx="4" cy="4" r="2"></circle>
+            </svg>
+          </a>
+          <a class="glass-card flex size-9 items-center justify-center text-muted-fg transition-colors duration-300 hover:text-primary [&amp;_svg]:size-4"
+            href="https://github.com/ramtin-2024" target="_blank">
+            <svg fill="none" height="16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+              stroke-width="2" viewbox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+              </path>
+            </svg>
+          </a>
+          <a class="glass-card flex size-9 items-center justify-center text-muted-fg transition-colors duration-300 hover:text-primary [&amp;_svg]:size-4"
+            href="https://x.com/Ramtingolbon">
+            <svg fill="none" height="16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+              stroke-width="2" viewbox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z">
+              </path>
+            </svg>
+          </a>
+          <a class="glass-card flex size-9 items-center justify-center text-muted-fg transition-colors duration-300 hover:text-primary [&amp;_svg]:size-4"
+            href="https://t.me/Ramtin83187" target="_blank">
+            <svg fill="none" height="16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+              stroke-width="2" viewbox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M21.198 2.43a2.242 2.242 0 0 0-1.935-.112L2.37 8.328a2.25 2.25 0 0 0-.127 4.16l4.8 1.637a1 1 0 0 0 1.037-.215l10.155-9.35a.5.5 0 0 1 .678.733l-8.47 8.127a1 1 0 0 0-.27.915l1.6 6.12a2.25 2.25 0 0 0 4.34-.316l3.665-15.145a2.25 2.25 0 0 0-.78-2.144z">
+              </path>
+            </svg>
+          </a>
+        </div>
+        <div class="mt-auto flex flex-col gap-3 px-2">
+          <div class="flex items-center justify-between border-b border-border py-3 text-xs">
+            <span class="font-semibold uppercase tracking-caps text-copy-dim">
+              وضعیت
+            </span>
+            <span class="text-sm text-copy-bright">
+              <span class="ml-2 inline-block size-1.5 rounded-full bg-success shadow-status-dot">
+              </span>
+              در دسترس
+            </span>
+          </div>
+          <div class="flex items-center justify-between border-b border-border py-3 text-xs">
+            <span class="font-semibold uppercase tracking-caps text-copy-dim">
+              مکان
+            </span>
+            <span class="text-sm text-copy-bright"> ایران، گیلان </span>
+          </div>
+          <div class="flex items-center justify-between py-3 text-xs">
+            <span class="font-semibold uppercase tracking-caps text-copy-dim">
+              تجربه
+            </span>
+            <span class="text-sm text-copy-bright"> ۱۴۰۳ - اکنون </span>
+          </div>
+        </div>
+        <button
+          class="glass-card flex w-full items-center justify-center gap-2 rounded-xl py-4 text-sm font-semibold tracking-wide transition-all duration-300 [&amp;&gt;span]:text-lg [&amp;&gt;span]:text-primary"
+          type="button">
+          دانلود CV
+        </button>
+      </aside>
+      <!-- ===== Main Content ===== -->
+      <main class="main-content glass" id="mainContent">
+        <!-- HOME -->
+        <section class="section hero" data-section="home">
+          <p class="hero__label">به دنیای کدنویسی من خوش آمدید</p>
+          <h2 class="hero__heading">
+            من سیستم‌های بک‌اند
+            <br />
+            <span class="bg-gradient-to-br from-primary to-secondary bg-clip-text text-transparent">
+              امن و مقیاس‌پذیر
+            </span>
+            خلق میکنم
+          </h2>
+          <p class="hero__desc">
+            توسعه‌دهنده نرم‌افزار متمرکز بر طراحی بک‌اند با Go و Python، ساخت
+            ربات‌های پیشرفته تلگرام و پیاده‌سازی اصول امنیت سایبری برای خلق
+            محصولات دیجیتال پایدار و سریع.
+          </p>
+        </section>
+        <!-- ABOUT -->
+        <section class="section" data-section="about">
+          <h2 class="section__heading">
+            <span class="section__icon"> ◈ </span>
+            درباره من
+          </h2>
+          <p class="about__text">
+            من دانشجوی مهندسی کامپیوتر و توسعه‌دهنده نرم‌افزار با تمرکز روی
+            برنامه‌نویسی بک‌اند (Go / Python) و امنیت کاربردی هستم. به عنوان
+            یک برنامه‌نویس، علاقه زیادی به حل چالش‌های فنی، بهینه‌سازی سرعت
+            سیستم‌ها و ساخت ربات‌های پیشرفته و کاربردی تلگرام دارم. همیشه در
+            تلاش دپلو کردن پروژه‌هایی هستم که در کنار کارایی و سرعت بالا، اصول
+            امنیتی و کدنویسی استاندارد در آن‌ها رعایت شده باشد.
+          </p>
+          <div class="about__info-grid">
+            <div class="about__info-item">
+              <span class="about__info-label"> سن </span>
+              <span class="about__info-value"> 21 </span>
+            </div>
+            <div class="about__info-item">
+              <span class="about__info-label"> اقامتگاه </span>
+              <span class="about__info-value"> ایران، گیلان </span>
+            </div>
+            <div class="about__info-item">
+              <span class="about__info-label"> وضعیت </span>
+              <span class="about__info-value"> در دسترس </span>
+            </div>
+            <div class="about__info-item">
+              <span class="about__info-label"> ایمیل </span>
+              <span class="about__info-value">
+                ramtingolbon83@gmail.com
+              </span>
+            </div>
+          </div>
+          <h3 class="section__heading" style="font-size: 1.25rem">
+            کاری که من انجام می دهم
+          </h3>
+          <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
+            <div class="glass-card flex flex-col gap-3 p-6 transition-all duration-300 ease-in-out">
+              <div class="flex size-10 items-center justify-center rounded-lg bg-primary/10 text-primary">
+                <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                  stroke-width="2" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <polyline points="16 18 22 12 16 6"></polyline>
+                  <polyline points="8 6 2 12 8 18"></polyline>
+                </svg>
+              </div>
+              <h4 class="font-heading font-semibold">Figma / Adobe Suite</h4>
+              <p class="text-sm leading-relaxed text-copy-soft">
+                ساخت برنامه های وب پاسخگو و کارآمد با استفاده از چارچوب های
+                مدرن و فناوری های پیشرفته.
+              </p>
+            </div>
+            <div class="glass-card flex flex-col gap-3 p-6 transition-all duration-300 ease-in-out">
+              <div class="flex size-10 items-center justify-center rounded-lg bg-primary/10 text-primary">
+                <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                  stroke-width="2" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M12 19l7-7 3 3-7 7-3-3z"></path>
+                  <path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"></path>
+                  <path d="M2 2l7.586 7.586"></path>
+                  <circle cx="11" cy="11" r="2"></circle>
+                </svg>
+              </div>
+              <h4 class="font-heading font-semibold">طراحی UI/UX</h4>
+              <p class="text-sm leading-relaxed text-copy-soft">
+                ایجاد رابط های بصری با توجه دقیق به سلسله مراتب بصری، فاصله
+                گذاری و تعاملات خرد.
+              </p>
+            </div>
+            <div class="glass-card flex flex-col gap-3 p-6 transition-all duration-300 ease-in-out">
+              <div class="flex size-10 items-center justify-center rounded-lg bg-primary/10 text-primary">
+                <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                  stroke-width="2" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                </svg>
+              </div>
+              <h4 class="font-heading font-semibold">استراتژی برند</h4>
+              <p class="text-sm leading-relaxed text-copy-soft">
+                توسعه هویت های منسجم برند که با مخاطبان هدف طنین انداز می شود
+                و باعث ایجاد تعامل می شود.
+              </p>
+            </div>
+            <div class="glass-card flex flex-col gap-3 p-6 transition-all duration-300 ease-in-out">
+              <div class="flex size-10 items-center justify-center rounded-lg bg-primary/10 text-primary">
+                <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                  stroke-width="2" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <line x1="18" x2="18" y1="20" y2="10"></line>
+                  <line x1="12" x2="12" y1="20" y2="4"></line>
+                  <line x1="6" x2="6" y1="20" y2="14"></line>
+                </svg>
+              </div>
+              <h4 class="font-heading font-semibold">تجزیه و تحلیل و سئو</h4>
+              <p class="text-sm leading-relaxed text-copy-soft">
+                بهینه سازی حضور دیجیتال از طریق بینش های مبتنی بر داده و
+                استراتژی های بهینه سازی موتور جستجو.
+              </p>
+            </div>
+          </div>
+        </section>
+        <!-- TESTIMONIALS -->
+        <section class="section" data-section="testimonials">
+          <h2 class="section__heading">
+            <span class="section__icon"> ❝ </span>
+            نظرات مشتریان
+          </h2>
+          <div class="testimonial-card glass-card">
+            <div class="testimonial-card__glow"></div>
+            <div class="testimonial-slide active">
+              <div class="stars">
+                <span class="star">
+                  <svg viewbox="0 0 24 24">
+                    <polygon
+                      points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
+                    </polygon>
+                  </svg>
+                </span>
+                <span class="star">
+                  <svg viewbox="0 0 24 24">
+                    <polygon
+                      points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
+                    </polygon>
+                  </svg>
+                </span>
+                <span class="star">
+                  <svg viewbox="0 0 24 24">
+                    <polygon
+                      points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
+                    </polygon>
+                  </svg>
+                </span>
+                <span class="star">
+                  <svg viewbox="0 0 24 24">
+                    <polygon
+                      points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
+                    </polygon>
+                  </svg>
+                </span>
+                <span class="star">
+                  <svg viewbox="0 0 24 24">
+                    <polygon
+                      points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
+                    </polygon>
+                  </svg>
+                </span>
+              </div>
+              <p class="testimonial__quote">
+                "کالن کل حضور دیجیتال ما را متحول کرد. توجه او به جزئیات و دید
+                خلاقانه او فراتر از هر انتظاری بود. 40٪ افزایش در تعامل
+                کاربر."
+              </p>
+              <div class="testimonial__author">
+                <img alt="" class="testimonial__avatar" src="https://picsum.photos/100/100?random=20" />
+                <div>
+                  <p class="testimonial__name">سارا چن</p>
+                  <p class="testimonial__role">مدیر عامل، Nexus Labs</p>
+                </div>
+              </div>
+            </div>
+            <div class="testimonial-slide">
+              <div class="stars">
+                <span class="star">
+                  <svg viewbox="0 0 24 24">
+                    <polygon
+                      points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
+                    </polygon>
+                  </svg>
+                </span>
+                <span class="star">
+                  <svg viewbox="0 0 24 24">
+                    <polygon
+                      points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
+                    </polygon>
+                  </svg>
+                </span>
+                <span class="star">
+                  <svg viewbox="0 0 24 24">
+                    <polygon
+                      points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
+                    </polygon>
+                  </svg>
+                </span>
+                <span class="star">
+                  <svg viewbox="0 0 24 24">
+                    <polygon
+                      points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
+                    </polygon>
+                  </svg>
+                </span>
+                <span class="star">
+                  <svg viewbox="0 0 24 24">
+                    <polygon
+                      points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
+                    </polygon>
+                  </svg>
+                </span>
+              </div>
+              <p class="testimonial__quote">
+                "کار با Kaelen یک تغییر بازی برای محصول ما بود. او سطحی از
+                پیچیدگی را در رابط کاربری ما به ارمغان آورد که ما فکر نمی
+                کردیم در جدول زمانی ما امکان پذیر باشد."
+              </p>
+              <div class="testimonial__author">
+                <img alt="" class="testimonial__avatar" src="https://picsum.photos/100/100?random=21" />
+                <div>
+                  <p class="testimonial__name">مارکوس ریورا</p>
+                  <p class="testimonial__role">سرب محصول، Vertex</p>
+                </div>
+              </div>
+            </div>
+            <div class="testimonial-slide">
+              <div class="stars">
+                <span class="star">
+                  <svg viewbox="0 0 24 24">
+                    <polygon
+                      points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
+                    </polygon>
+                  </svg>
+                </span>
+                <span class="star">
+                  <svg viewbox="0 0 24 24">
+                    <polygon
+                      points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
+                    </polygon>
+                  </svg>
+                </span>
+                <span class="star">
+                  <svg viewbox="0 0 24 24">
+                    <polygon
+                      points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
+                    </polygon>
+                  </svg>
+                </span>
+                <span class="star">
+                  <svg viewbox="0 0 24 24">
+                    <polygon
+                      points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
+                    </polygon>
+                  </svg>
+                </span>
+                <span class="star">
+                  <svg viewbox="0 0 24 24">
+                    <polygon
+                      points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
+                    </polygon>
+                  </svg>
+                </span>
+              </div>
+              <p class="testimonial__quote">
+                "استعداد استثنایی. Kaelen فقط رابط&zwnj;ها را طراحی
+                نمی&zwnj;کند - او تجربیات خود را ایجاد می&zwnj;کند. نرخ تبدیل
+                ما پس از طراحی مجدد او 28٪ افزایش یافت. به شدت توصیه
+                می&zwnj;شود."
+              </p>
+              <div class="testimonial__author">
+                <img alt="" class="testimonial__avatar" src="https://picsum.photos/100/100?random=22" />
+                <div>
+                  <p class="testimonial__name">النا ولکوف</p>
+                  <p class="testimonial__role">موسس استودیو Prism</p>
+                </div>
+              </div>
+            </div>
+            <div class="testimonial-nav">
+              <button class="testimonial-nav__btn glass-card" id="testimonialPrev">
+                <svg fill="none" height="16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                  stroke-width="2" viewbox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg">
+                  <polyline points="15 18 9 12 15 6"></polyline>
+                </svg>
+              </button>
+              <div class="testimonial-dots">
+                <button class="testimonial-dot active"></button>
+                <button class="testimonial-dot"></button>
+                <button class="testimonial-dot"></button>
+              </div>
+              <button class="testimonial-nav__btn glass-card" id="testimonialNext">
+                <svg fill="none" height="16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                  stroke-width="2" viewbox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg">
+                  <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </section>
+        <!-- RESUME -->
+        <section class="section" data-section="resume">
+          <h2 class="section__heading">
+            <span class="section__icon" style="color: var(--primary); opacity: 0.7">
+              ⎔
+            </span>
+            رزومه
+          </h2>
+          <h3 class="resume__sub-heading">تجربه</h3>
+          <div class="timeline">
+            <div class="timeline-item">
+              <div class="timeline-dot timeline-dot--active"></div>
+              <span class="timeline-item__period timeline-item__period--active">
+                ۱۴۰۳ - اکنون
+              </span>
+              <h4 class="timeline-item__title">
+                توسعه‌دهنده مستقل نرم‌افزار و ربات‌های تلگرام
+                <span class="timeline-item__company">
+                  &middot; پروژه‌های شخصی و فریلنس
+                </span>
+              </h4>
+              <p class="timeline-item__desc">
+                طراحی و پیاده‌سازی ربات‌ها و مینی‌اپ‌های پیشرفته (TMA) در بستر
+                تلگرام؛ توسعه سیستم‌های سمت سرور (Backend) بهینه و ساختاریافته
+                با استفاده از زبان‌های Go و Python و مدیریت کدهای پروژه در
+                گیت‌هاب.
+              </p>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-dot timeline-dot--inactive"></div>
+              <span class="timeline-item__period timeline-item__period--inactive">
+                ۱۴۰۴ - اکنون
+              </span>
+              <h4 class="timeline-item__title">
+                پژوهشگر علاقه‌مند به امنیت سایبری
+                <span class="timeline-item__company">
+                  &middot; تحقیق و توسعه امن
+                </span>
+              </h4>
+              <p class="timeline-item__desc">
+                مطالعه و پیاده‌سازی اصول کدنویسی امن (Secure Coding) در
+                پروژه‌های شخصی جهت مقاوم‌سازی سرویس‌ها در برابر آسیب‌پذیری‌های
+                رایج وب و بررسی مکانیزم‌های دفاعی شبکه در محیط‌های آزمایشگاهی.
+              </p>
+            </div>
+          </div>
+          <h3 class="resume__sub-heading">تحصیلات</h3>
+          <div class="timeline">
+            <div class="timeline-item">
+              <div class="timeline-dot timeline-dot--inactive"></div>
+              <span class="timeline-item__period timeline-item__period--inactive">
+                ۱۴۰۳ - اکنون
+              </span>
+              <h4 class="timeline-item__title">
+                کارشناسی مهندسی کامپیوتر
+                <span class="timeline-item__company">
+                  &middot; دانشگاه آزاد اسلامی قزوین (باراجین )
+                </span>
+              </h4>
+              <p class="timeline-item__desc">
+                تمرکز روی یادگیری اصول مهندسی نرم‌افزار، ساختار داده‌ها،
+                الگوریتم‌ها و توسعه سیستم‌های سمت سرور.
+              </p>
+            </div>
+          </div>
+          <h3 class="resume__sub-heading">مهارت ها</h3>
+          <div class="skills-grid">
+            <div>
+              <div class="skill__header">
+                <span class="skill__name"> python/Django </span>
+                <span class="skill__pct" data-level="80"> 80% </span>
+              </div>
+              <div class="skill__bar">
+                <div class="skill__fill h-full rounded-[3px] bg-gradient-to-r from-primary to-secondary"
+                  data-level="95"></div>
+              </div>
+            </div>
+            <div>
+              <div class="skill__header">
+                <span class="skill__name"> Golang </span>
+                <span class="skill__pct"> 78% </span>
+              </div>
+              <div class="skill__bar">
+                <div class="skill__fill h-full rounded-[3px] bg-gradient-to-r from-primary to-secondary"
+                  data-level="90"></div>
+              </div>
+            </div>
+            <div>
+              <div class="skill__header">
+                <span class="skill__name"> Telegram Bots Development </span>
+                <span class="skill__pct"> 75% </span>
+              </div>
+              <div class="skill__bar">
+                <div class="skill__fill h-full rounded-[3px] bg-gradient-to-r from-primary to-secondary"
+                  data-level="92"></div>
+              </div>
+            </div>
+            <div>
+              <div class="skill__header">
+                <span class="skill__name"> ++C </span>
+                <span class="skill__pct"> 75% </span>
+              </div>
+              <div class="skill__bar">
+                <div class="skill__fill h-full rounded-[3px] bg-gradient-to-r from-primary to-secondary"
+                  data-level="88"></div>
+              </div>
+            </div>
+            <div>
+              <div class="skill__header">
+                <span class="skill__name"> Application Security </span>
+                <span class="skill__pct"> 65% </span>
+              </div>
+              <div class="skill__bar">
+                <div class="skill__fill h-full rounded-[3px] bg-gradient-to-r from-primary to-secondary"
+                  data-level="75"></div>
+              </div>
+            </div>
+            <div>
+              <div class="skill__header">
+                <span class="skill__name">
+                  Git & GitHub (Version Control)
+                </span>
+                <span class="skill__pct"> 75% </span>
+              </div>
+              <div class="skill__bar">
+                <div class="skill__fill h-full rounded-[3px] bg-gradient-to-r from-primary to-secondary"
+                  data-level="82"></div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- PORTFOLIO -->
+        <section class="section" data-section="portfolio">
+          <h2 class="section__heading">
+            <span class="section__icon"> &plusb; </span>
+            نمونه کارها
+          </h2>
+          <div class="portfolio-filters">
+            <button class="portfolio-filter active" data-filter="all">
+              همه
+            </button>
+            <button class="portfolio-filter" data-filter="web">
+              ابزار های هک/امنیت
+            </button>
+            <button class="portfolio-filter" data-filter="app">
+              طراحی اپلیکیشن/وب
+            </button>
+            <button class="portfolio-filter" data-filter="brand">
+              ساخت ربات تلگرام
+            </button>
+          </div>
+          <div class="portfolio-grid">
+            <div class="portfolio-card glass-card" data-category="web">
+              <div class="portfolio-card__img-wrap">
+                <img alt="Nebula Dashboard" class="portfolio-card__img" src="{% static 'p1.jpg' %}" />
+                <div class="portfolio-card__overlay">
+                  <span class="portfolio-card__link">
+                    <svg fill="none" height="16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                      stroke-width="2" viewbox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                      <polyline points="15 3 21 3 21 9"></polyline>
+                      <line x1="10" x2="21" y1="14" y2="3"></line>
+                    </svg>
+                  </span>
+                </div>
+              </div>
+              <div class="portfolio-card__body">
+                <p class="portfolio-card__cat">طراحی وب</p>
+                <div class="portfolio-card__title">داشبورد سحابی</div>
+              </div>
+            </div>
+            <div class="portfolio-card glass-card" data-category="app">
+              <div class="portfolio-card__img-wrap">
+                <img alt="Pulse Mobile App" class="portfolio-card__img" src="{% static 'p2.jpg' %}" />
+                <div class="portfolio-card__overlay">
+                  <span class="portfolio-card__link">
+                    <svg fill="none" height="16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                      stroke-width="2" viewbox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                      <polyline points="15 3 21 3 21 9"></polyline>
+                      <line x1="10" x2="21" y1="14" y2="3"></line>
+                    </svg>
+                  </span>
+                </div>
+              </div>
+              <div class="portfolio-card__body">
+                <p class="portfolio-card__cat">طراحی اپلیکیشن</p>
+                <div class="portfolio-card__title">اپلیکیشن موبایل پالس</div>
+              </div>
+            </div>
+            <div class="portfolio-card glass-card" data-category="brand">
+              <div class="portfolio-card__img-wrap">
+                <img alt="Onyx Brand Identity" class="portfolio-card__img" src="{% static 'p3.jpg' %}" />
+                <div class="portfolio-card__overlay">
+                  <span class="portfolio-card__link">
+                    <svg fill="none" height="16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                      stroke-width="2" viewbox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                      <polyline points="15 3 21 3 21 9"></polyline>
+                      <line x1="10" x2="21" y1="14" y2="3"></line>
+                    </svg>
+                  </span>
+                </div>
+              </div>
+              <div class="portfolio-card__body">
+                <p class="portfolio-card__cat">برندسازی</p>
+                <div class="portfolio-card__title">هویت برند اونیکس</div>
+              </div>
+            </div>
+            <div class="portfolio-card glass-card" data-category="web">
+              <div class="portfolio-card__img-wrap">
+                <img alt="Aurora E-Commerce" class="portfolio-card__img" src="{% static 'p4.jpg' %}" />
+                <div class="portfolio-card__overlay">
+                  <span class="portfolio-card__link">
+                    <svg fill="none" height="16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                      stroke-width="2" viewbox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                      <polyline points="15 3 21 3 21 9"></polyline>
+                      <line x1="10" x2="21" y1="14" y2="3"></line>
+                    </svg>
+                  </span>
+                </div>
+              </div>
+              <div class="portfolio-card__body">
+                <p class="portfolio-card__cat">طراحی وب</p>
+                <div class="portfolio-card__title">تجارت الکترونیک آرورا</div>
+              </div>
+            </div>
+            <div class="portfolio-card glass-card" data-category="app">
+              <div class="portfolio-card__img-wrap">
+                <img alt="Zenith Fitness App" class="portfolio-card__img" src="{% static 'p5.jpg' %}" />
+                <div class="portfolio-card__overlay">
+                  <span class="portfolio-card__link">
+                    <svg fill="none" height="16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                      stroke-width="2" viewbox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                      <polyline points="15 3 21 3 21 9"></polyline>
+                      <line x1="10" x2="21" y1="14" y2="3"></line>
+                    </svg>
+                  </span>
+                </div>
+              </div>
+              <div class="portfolio-card__body">
+                <p class="portfolio-card__cat">طراحی اپلیکیشن</p>
+                <div class="portfolio-card__title">
+                  اپلیکیشن تناسب اندام زنیت
+                </div>
+              </div>
+            </div>
+            <div class="portfolio-card glass-card" data-category="brand">
+              <div class="portfolio-card__img-wrap">
+                <img alt="Vertex Rebrand" class="portfolio-card__img" src="{% static 'p6.jpg' %}" />
+                <div class="portfolio-card__overlay">
+                  <span class="portfolio-card__link">
+                    <svg fill="none" height="16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                      stroke-width="2" viewbox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                      <polyline points="15 3 21 3 21 9"></polyline>
+                      <line x1="10" x2="21" y1="14" y2="3"></line>
+                    </svg>
+                  </span>
+                </div>
+              </div>
+              <div class="portfolio-card__body">
+                <p class="portfolio-card__cat">برندسازی</p>
+                <div class="portfolio-card__title">Vertex Rebrand</div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- CONTACT -->
+        <section class="section" data-section="contact">
+          <h2 class="section__heading">
+            <span class="section__icon" style="color: var(--primary); opacity: 0.7">
+              ✉
+            </span>
+            تماس
+          </h2>
+          <p class="about__text" style="margin-bottom: 2.5rem">
+            پروژه ای در ذهن دارید؟ بیایید با هم چیز خارق العاده ای بسازیم.
+          </p>
+          <div class="contact-layout">
+            <form class="contact-form" onsubmit="event.preventDefault()">
+              <div class="contact-form__row">
+                <input placeholder="نام شما" required="" type="text" />
+                <input placeholder="ایمیل شما" required="" type="email" />
+              </div>
+              <input placeholder="موضوع" type="text" />
+              <textarea placeholder="پیام شما" rows="5"></textarea>
+              <button
+                class="contact-form__submit bg-gradient-to-br from-primary to-secondary text-primary-fg transition-shadow duration-300 hover:shadow-[0_0_30px_color-mix(in_srgb,var(--primary)_40%,transparent)]"
+                type="submit">
+                ارسال پیام
+                <svg fill="none" height="16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                  stroke-width="2" viewbox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg">
+                  <line x1="22" x2="11" y1="2" y2="13"></line>
+                  <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                </svg>
+              </button>
+            </form>
+            <div class="contact-info">
+              <div class="contact-info-card glass-card">
+                <div class="contact-info-card__icon">
+                  <svg fill="none" height="16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                    stroke-width="2" viewbox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                    <circle cx="12" cy="10" r="3"></circle>
+                  </svg>
+                </div>
+                <div>
+                  <p class="contact-info-card__label">مکان</p>
+                  <p class="contact-info-card__value">ایران، گیلان</p>
+                </div>
+              </div>
+              <div class="contact-info-card glass-card">
+                <div class="contact-info-card__icon">
+                  <svg fill="none" height="16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                    stroke-width="2" viewbox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+                    </path>
+                  </svg>
+                </div>
+                <div>
+                  <p class="contact-info-card__label">تلفن</p>
+                  <p class="contact-info-card__value">09231752678</p>
+                </div>
+              </div>
+              <div class="contact-info-card glass-card">
+                <div class="contact-info-card__icon">
+                  <svg fill="none" height="16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                    stroke-width="2" viewbox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                    <polyline points="22,6 12,13 2,6"></polyline>
+                  </svg>
+                </div>
+                <div>
+                  <p class="contact-info-card__label">ایمیل</p>
+                  <p class="contact-info-card__value">
+                    ramtingolbon@gmail.com
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+      <!-- ===== Right Side Navigation (Desktop) ===== -->
+      <nav class="side-nav glass">
+        <button class="side-nav__btn active" data-nav="home">
+          <svg fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+            stroke-width="2" viewbox="0 0 24 24" width="18" xmlns="http://www.w3.org/2000/svg">
+            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+            <polyline points="9 22 9 12 15 12 15 22"></polyline>
+          </svg>
+          <span class="side-nav__tooltip"> صفحه اصلی </span>
+        </button>
+        <button class="side-nav__btn" data-nav="about">
+          <svg fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+            stroke-width="2" viewbox="0 0 24 24" width="18" xmlns="http://www.w3.org/2000/svg">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+            <circle cx="12" cy="7" r="4"></circle>
+          </svg>
+          <span class="side-nav__tooltip"> درباره </span>
+        </button>
+        <button class="side-nav__btn" data-nav="testimonials">
+          <svg fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+            stroke-width="2" viewbox="0 0 24 24" width="18" xmlns="http://www.w3.org/2000/svg">
+            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+          </svg>
+          <span class="side-nav__tooltip"> بررسی ها </span>
+        </button>
+        <button class="side-nav__btn" data-nav="resume">
+          <svg fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+            stroke-width="2" viewbox="0 0 24 24" width="18" xmlns="http://www.w3.org/2000/svg">
+            <rect height="14" rx="2" ry="2" width="20" x="2" y="7"></rect>
+            <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+          </svg>
+          <span class="side-nav__tooltip"> رزومه </span>
+        </button>
+        <button class="side-nav__btn" data-nav="portfolio">
+          <svg fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+            stroke-width="2" viewbox="0 0 24 24" width="18" xmlns="http://www.w3.org/2000/svg">
+            <rect height="7" width="7" x="3" y="3"></rect>
+            <rect height="7" width="7" x="14" y="3"></rect>
+            <rect height="7" width="7" x="14" y="14"></rect>
+            <rect height="7" width="7" x="3" y="14"></rect>
+          </svg>
+          <span class="side-nav__tooltip"> نمونه کارها </span>
+        </button>
+        <button class="side-nav__btn" data-nav="contact">
+          <svg fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+            stroke-width="2" viewbox="0 0 24 24" width="18" xmlns="http://www.w3.org/2000/svg">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+            <polyline points="22,6 12,13 2,6"></polyline>
+          </svg>
+          <span class="side-nav__tooltip"> تماس </span>
+        </button>
+      </nav>
+    </div>
+    <!-- .app-layout -->
+  </div>
+  <!-- .app-wrapper -->
+  <!-- Bottom Navigation (Mobile) -->
+  <nav class="bottom-nav glass">
+    <div class="bottom-nav__inner">
+      <button class="bottom-nav__btn active" data-nav="home">
+        <svg fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+          stroke-width="2" viewbox="0 0 24 24" width="18" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+          <polyline points="9 22 9 12 15 12 15 22"></polyline>
+        </svg>
+        صفحه اصلی
+      </button>
+      <button class="bottom-nav__btn" data-nav="about">
+        <svg fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+          stroke-width="2" viewbox="0 0 24 24" width="18" xmlns="http://www.w3.org/2000/svg">
+          <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+          <circle cx="12" cy="7" r="4"></circle>
+        </svg>
+        درباره
+      </button>
+      <button class="bottom-nav__btn" data-nav="resume">
+        <svg fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+          stroke-width="2" viewbox="0 0 24 24" width="18" xmlns="http://www.w3.org/2000/svg">
+          <rect height="14" rx="2" ry="2" width="20" x="2" y="7"></rect>
+          <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+        </svg>
+        رزومه
+      </button>
+      <button class="bottom-nav__btn" data-nav="portfolio">
+        <svg fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+          stroke-width="2" viewbox="0 0 24 24" width="18" xmlns="http://www.w3.org/2000/svg">
+          <rect height="7" width="7" x="3" y="3"></rect>
+          <rect height="7" width="7" x="14" y="3"></rect>
+          <rect height="7" width="7" x="14" y="14"></rect>
+          <rect height="7" width="7" x="3" y="14"></rect>
+        </svg>
+        نمونه کارها
+      </button>
+      <button class="bottom-nav__btn" data-nav="contact">
+        <svg fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+          stroke-width="2" viewbox="0 0 24 24" width="18" xmlns="http://www.w3.org/2000/svg">
+          <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+          <polyline points="22,6 12,13 2,6"></polyline>
+        </svg>
+        تماس
+      </button>
+    </div>
+  </nav>
+  <script src="{% static 'main.js' %}"></script>
+</body>
+
+<!-- Mirrored from www.iarsalan.ir/auracv/main-template/index-aurora-onepage.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 05 Jul 2026 16:54:35 GMT -->
+
+</html>
