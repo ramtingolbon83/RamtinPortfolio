@@ -1,0 +1,68 @@
+{% load static %}
+
+<!doctype html>
+<html dir="rtl" lang="fa">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>{{ post.title }}</title>
+
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
+    <link href="{% static 'css/theme-aurora.css' %}" rel="stylesheet">
+    <link href="{% static 'css/tailwind-built.css' %}" rel="stylesheet">
+    <link href="{% static 'css/blog-detail.css' %}" rel="stylesheet">
+
+</head>
+
+
+<body class="aurora-theme">
+
+
+    <!-- بک گراند سایت -->
+    <div aria-hidden="true"
+        class="pointer-events-none fixed z-0 h-[500px] w-[500px] -left-[4%] -top-[6%] animate-orbit rounded-full bg-primary opacity-40 blur-[120px] mix-blend-screen saturate-150">
+    </div>
+
+
+    <div aria-hidden="true"
+        class="pointer-events-none fixed z-0 h-[500px] w-[500px] -bottom-[6%] -right-[4%] animate-orbit-reverse rounded-full bg-secondary opacity-40 blur-[120px] mix-blend-screen saturate-150">
+    </div>
+
+
+
+    <main class="main-content glass">
+
+        <section class="section">
+
+
+            <img src="{{ post.image.url }}" alt="{{ post.title }}" class="article-image">
+
+
+            <h1 class="section__heading">
+                {{ post.title }}
+            </h1>
+
+
+            <p class="blog__cat">
+                <span>📅 {{ post.created_at|date:"Y/m/d" }}</span>
+                <span>👁 {{ post.views }}</span>
+            </p>
+            <div class="article-content">
+
+                {{ post.content }}
+
+            </div>
+
+
+        </section>
+
+    </main>
+
+
+
+</body>
+
+</html>

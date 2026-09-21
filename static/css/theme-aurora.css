@@ -40,6 +40,10 @@
     color: color-mix(in srgb, var(--primary) 78%, transparent);
 }
 
+.aurora-theme .blog-card__cat {
+    color: color-mix(in srgb, var(--primary) 78%, transparent);
+}
+
 /* Let Tailwind primary → secondary gradients override style.css fills */
 .aurora-theme .skill__fill,
 .aurora-theme .contact-form__submit {

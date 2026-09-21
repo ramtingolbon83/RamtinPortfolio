@@ -94,6 +94,28 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+// ---- Blog Filters ----
+const blogFilterBtns = document.querySelectorAll('.blog-filter');
+const blogCards = document.querySelectorAll('.blog-card');
+
+blogFilterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+
+        blogFilterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        const filter = btn.dataset.filter;
+
+        blogCards.forEach(card => {
+            card.style.display =
+                filter === 'all' || card.dataset.category === filter
+                    ? ''
+                    : 'none';
+        });
+    });
+});
+
+
   // ---- Skill Bar Animation (Intersection Observer) ----
   const skillBars = document.querySelectorAll('.skill__fill');
   const observer = new IntersectionObserver(entries => {

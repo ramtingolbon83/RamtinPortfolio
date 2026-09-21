@@ -10,9 +10,9 @@
   <meta content="AuraCV Aurora variant &mdash; deep forest glassmorphic vCard with neon emerald and ocean cyan accents."
     name="description" />
   <meta content="AuraCV" name="author" />
-  <link href="{% static 'style.css' %}" rel="stylesheet" />
-  <link href="{% static 'theme-aurora.css' %}" rel="stylesheet" />
-  <link href="{% static 'tailwind-built.css' %}" rel="stylesheet" />
+  <link href="{% static 'css/style.css' %}" rel="stylesheet" />
+  <link href="{% static 'css/theme-aurora.css' %}" rel="stylesheet" />
+  <link href="{% static 'css/tailwind-built.css' %}" rel="stylesheet" />
 </head>
 
 <body class="aurora-theme">
@@ -66,7 +66,7 @@
     <div class="rounded-3xl border border-border bg-surface p-1.5">
       <img alt="Profile"
         class="aspect-square w-full rounded-xl object-cover opacity-80 grayscale mix-blend-luminosity transition-all duration-700 ease-in-out hover:opacity-100 hover:grayscale-0"
-        src="{% static 'profile.jpg' %}" />
+        src="{% static 'profile/profile.jpg' %}" />
     </div>
     <div>
       <h1 class="px-2 font-heading text-2xl font-bold tracking-tightish">
@@ -163,7 +163,7 @@
         <div class="rounded-3xl border border-border bg-surface p-1.5">
           <img alt="Kaelen Voss"
             class="aspect-square w-full rounded-xl object-cover opacity-80 grayscale mix-blend-luminosity transition-all duration-700 ease-in-out hover:opacity-100 hover:grayscale-0"
-            src="{% static 'profile.jpg' %}" />
+            src="{% static 'profile/profile.jpg' %}" />
         </div>
         <div>
           <h1 class="px-2 font-heading text-2xl font-bold tracking-tightish">
@@ -266,7 +266,7 @@
         <!-- ABOUT -->
         <section class="section" data-section="about">
           <h2 class="section__heading">
-            <span class="section__icon"> ◈ </span>
+            <span class="section__icon">⬡</span>
             درباره من
           </h2>
           <p class="about__text">
@@ -303,60 +303,68 @@
           <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
             <div class="glass-card flex flex-col gap-3 p-6 transition-all duration-300 ease-in-out">
               <div class="flex size-10 items-center justify-center rounded-lg bg-primary/10 text-primary">
-                <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                  stroke-width="2" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                  <polyline points="16 18 22 12 16 6"></polyline>
-                  <polyline points="8 6 2 12 8 18"></polyline>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                  class="lucide lucide-blocks-icon lucide-blocks">
+                  <path
+                    d="M10 22V7a1 1 0 0 0-1-1H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-5a1 1 0 0 0-1-1H2" />
+                  <rect x="14" y="2" width="8" height="8" rx="1" />
                 </svg>
               </div>
-              <h4 class="font-heading font-semibold">Figma / Adobe Suite</h4>
+              <h4 class="font-heading font-semibold">Backend Development</h4>
               <p class="text-sm leading-relaxed text-copy-soft">
-                ساخت برنامه های وب پاسخگو و کارآمد با استفاده از چارچوب های
-                مدرن و فناوری های پیشرفته.
+                توسعه زیرساخت‌های بک‌اند، طراحی APIهای امن و پیاده‌سازی راهکارهای مقیاس‌پذیر برای وب‌سایت‌ها و
+                سامانه‌های تحت وب.
               </p>
             </div>
             <div class="glass-card flex flex-col gap-3 p-6 transition-all duration-300 ease-in-out">
               <div class="flex size-10 items-center justify-center rounded-lg bg-primary/10 text-primary">
-                <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                  stroke-width="2" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M12 19l7-7 3 3-7 7-3-3z"></path>
-                  <path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"></path>
-                  <path d="M2 2l7.586 7.586"></path>
-                  <circle cx="11" cy="11" r="2"></circle>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                  class="lucide lucide-bot-icon lucide-bot">
+                  <path d="M12 8V4H8" />
+                  <rect width="16" height="12" x="4" y="8" rx="2" />
+                  <path d="M2 14h2" />
+                  <path d="M20 14h2" />
+                  <path d="M15 13v2" />
+                  <path d="M9 13v2" />
                 </svg>
               </div>
-              <h4 class="font-heading font-semibold">طراحی UI/UX</h4>
+              <h4 class="font-heading font-semibold">Telegram Bot Development</h4>
               <p class="text-sm leading-relaxed text-copy-soft">
-                ایجاد رابط های بصری با توجه دقیق به سلسله مراتب بصری، فاصله
-                گذاری و تعاملات خرد.
+                توسعه بات‌های تلگرام با قابلیت اتصال به APIها، پایگاه داده و سیستم‌های اتوماسیون برای مدیریت و اجرای
+                فرآیندهای مختلف.
               </p>
             </div>
             <div class="glass-card flex flex-col gap-3 p-6 transition-all duration-300 ease-in-out">
               <div class="flex size-10 items-center justify-center rounded-lg bg-primary/10 text-primary">
-                <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                  stroke-width="2" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                  class="lucide lucide-database-icon lucide-database">
+                  <ellipse cx="12" cy="5" rx="9" ry="3" />
+                  <path d="M3 5V19A9 3 0 0 0 21 19V5" />
+                  <path d="M3 12A9 3 0 0 0 21 12" />
                 </svg>
               </div>
-              <h4 class="font-heading font-semibold">استراتژی برند</h4>
+              <h4 class="font-heading font-semibold">Database Architecture</h4>
               <p class="text-sm leading-relaxed text-copy-soft">
-                توسعه هویت های منسجم برند که با مخاطبان هدف طنین انداز می شود
-                و باعث ایجاد تعامل می شود.
+                طراحی ساختار پایگاه داده با تمرکز بر عملکرد، مقیاس‌پذیری، یکپارچگی داده‌ها و سهولت توسعه.
               </p>
             </div>
             <div class="glass-card flex flex-col gap-3 p-6 transition-all duration-300 ease-in-out">
               <div class="flex size-10 items-center justify-center rounded-lg bg-primary/10 text-primary">
-                <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                  stroke-width="2" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                  <line x1="18" x2="18" y1="20" y2="10"></line>
-                  <line x1="12" x2="12" y1="20" y2="4"></line>
-                  <line x1="6" x2="6" y1="20" y2="14"></line>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                  class="lucide lucide-shield-lock-icon lucide-shield-lock">
+                  <path
+                    d="M20 9.807V6a1 1 0 00-1-1c-2 0-4.49-1.19-6.24-2.72a1.17 1.17 0 00-1.52 0C9.5 3.8 7 5 5 5a1 1 0 00-1 1v7c0 3.88 2.107 6.254 5 7.796" />
+                  <path d="M19 17v-2a2 2 0 00-4 0v2" />
+                  <rect x="13" y="17" width="8" height="5" rx="1" />
                 </svg>
               </div>
-              <h4 class="font-heading font-semibold">تجزیه و تحلیل و سئو</h4>
+              <h4 class="font-heading font-semibold">Cybersecurity</h4>
               <p class="text-sm leading-relaxed text-copy-soft">
-                بهینه سازی حضور دیجیتال از طریق بینش های مبتنی بر داده و
-                استراتژی های بهینه سازی موتور جستجو.
+                آشنایی با اصول امنیت سایبری و به‌کارگیری بهترین شیوه‌های امنیتی در توسعه نرم‌افزار و سرویس‌های تحت وب.
               </p>
             </div>
           </div>
@@ -364,184 +372,106 @@
         <!-- TESTIMONIALS -->
         <section class="section" data-section="testimonials">
           <h2 class="section__heading">
-            <span class="section__icon"> ❝ </span>
+            <span class="section__icon">❝</span>
             نظرات مشتریان
           </h2>
           <div class="testimonial-card glass-card">
             <div class="testimonial-card__glow"></div>
+
+            {% for testimonial in testimonials %}
+
+            <div class="testimonial-slide {% if forloop.first %}active{% endif %}">
+
+              <div class="stars">
+
+                {% for i in "12345" %}
+
+                {% if forloop.counter <= testimonial.rating %} <span class="star">
+                  <svg viewBox="0 0 24 24">
+                    <polygon
+                      points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
+                    </polygon>
+                  </svg>
+                  </span>
+                  {% endif %}
+
+                  {% endfor %}
+
+              </div>
+
+              <p class="testimonial__quote">
+                "{{ testimonial.comment }}"
+              </p>
+
+              <div class="testimonial__author">
+
+                {% if testimonial.avatar %}
+                <img src="{{ testimonial.avatar.url }}" alt="{{ testimonial.name }}" class="testimonial__avatar">
+                {% else %}
+                <img src="https://ui-avatars.com/api/?name={{ testimonial.name }}" alt="{{ testimonial.name }}"
+                  class="testimonial__avatar">
+                {% endif %}
+
+                <div>
+                  <p class="testimonial__name">
+                    {{ testimonial.name }}
+                  </p>
+
+                  <p class="testimonial__role">
+                    {{ testimonial.role }}
+                  </p>
+                </div>
+
+              </div>
+
+            </div>
+
+            {% empty %}
+
             <div class="testimonial-slide active">
-              <div class="stars">
-                <span class="star">
-                  <svg viewbox="0 0 24 24">
-                    <polygon
-                      points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
-                    </polygon>
-                  </svg>
-                </span>
-                <span class="star">
-                  <svg viewbox="0 0 24 24">
-                    <polygon
-                      points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
-                    </polygon>
-                  </svg>
-                </span>
-                <span class="star">
-                  <svg viewbox="0 0 24 24">
-                    <polygon
-                      points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
-                    </polygon>
-                  </svg>
-                </span>
-                <span class="star">
-                  <svg viewbox="0 0 24 24">
-                    <polygon
-                      points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
-                    </polygon>
-                  </svg>
-                </span>
-                <span class="star">
-                  <svg viewbox="0 0 24 24">
-                    <polygon
-                      points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
-                    </polygon>
-                  </svg>
-                </span>
-              </div>
               <p class="testimonial__quote">
-                "کالن کل حضور دیجیتال ما را متحول کرد. توجه او به جزئیات و دید
-                خلاقانه او فراتر از هر انتظاری بود. 40٪ افزایش در تعامل
-                کاربر."
+                هنوز نظری ثبت نشده است.
               </p>
-              <div class="testimonial__author">
-                <img alt="" class="testimonial__avatar" src="https://picsum.photos/100/100?random=20" />
-                <div>
-                  <p class="testimonial__name">سارا چن</p>
-                  <p class="testimonial__role">مدیر عامل، Nexus Labs</p>
-                </div>
-              </div>
             </div>
-            <div class="testimonial-slide">
-              <div class="stars">
-                <span class="star">
-                  <svg viewbox="0 0 24 24">
-                    <polygon
-                      points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
-                    </polygon>
-                  </svg>
-                </span>
-                <span class="star">
-                  <svg viewbox="0 0 24 24">
-                    <polygon
-                      points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
-                    </polygon>
-                  </svg>
-                </span>
-                <span class="star">
-                  <svg viewbox="0 0 24 24">
-                    <polygon
-                      points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
-                    </polygon>
-                  </svg>
-                </span>
-                <span class="star">
-                  <svg viewbox="0 0 24 24">
-                    <polygon
-                      points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
-                    </polygon>
-                  </svg>
-                </span>
-                <span class="star">
-                  <svg viewbox="0 0 24 24">
-                    <polygon
-                      points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
-                    </polygon>
-                  </svg>
-                </span>
-              </div>
-              <p class="testimonial__quote">
-                "کار با Kaelen یک تغییر بازی برای محصول ما بود. او سطحی از
-                پیچیدگی را در رابط کاربری ما به ارمغان آورد که ما فکر نمی
-                کردیم در جدول زمانی ما امکان پذیر باشد."
-              </p>
-              <div class="testimonial__author">
-                <img alt="" class="testimonial__avatar" src="https://picsum.photos/100/100?random=21" />
-                <div>
-                  <p class="testimonial__name">مارکوس ریورا</p>
-                  <p class="testimonial__role">سرب محصول، Vertex</p>
-                </div>
-              </div>
-            </div>
-            <div class="testimonial-slide">
-              <div class="stars">
-                <span class="star">
-                  <svg viewbox="0 0 24 24">
-                    <polygon
-                      points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
-                    </polygon>
-                  </svg>
-                </span>
-                <span class="star">
-                  <svg viewbox="0 0 24 24">
-                    <polygon
-                      points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
-                    </polygon>
-                  </svg>
-                </span>
-                <span class="star">
-                  <svg viewbox="0 0 24 24">
-                    <polygon
-                      points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
-                    </polygon>
-                  </svg>
-                </span>
-                <span class="star">
-                  <svg viewbox="0 0 24 24">
-                    <polygon
-                      points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
-                    </polygon>
-                  </svg>
-                </span>
-                <span class="star">
-                  <svg viewbox="0 0 24 24">
-                    <polygon
-                      points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
-                    </polygon>
-                  </svg>
-                </span>
-              </div>
-              <p class="testimonial__quote">
-                "استعداد استثنایی. Kaelen فقط رابط&zwnj;ها را طراحی
-                نمی&zwnj;کند - او تجربیات خود را ایجاد می&zwnj;کند. نرخ تبدیل
-                ما پس از طراحی مجدد او 28٪ افزایش یافت. به شدت توصیه
-                می&zwnj;شود."
-              </p>
-              <div class="testimonial__author">
-                <img alt="" class="testimonial__avatar" src="https://picsum.photos/100/100?random=22" />
-                <div>
-                  <p class="testimonial__name">النا ولکوف</p>
-                  <p class="testimonial__role">موسس استودیو Prism</p>
-                </div>
-              </div>
-            </div>
+
+            {% endfor %}
+
             <div class="testimonial-nav">
+
               <button class="testimonial-nav__btn glass-card" id="testimonialPrev">
-                <svg fill="none" height="16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                  stroke-width="2" viewbox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg">
+
+                <svg fill="none" height="16" width="16" stroke="currentColor" stroke-linecap="round"
+                  stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24">
+
                   <polyline points="15 18 9 12 15 6"></polyline>
+
                 </svg>
+
               </button>
+
               <div class="testimonial-dots">
-                <button class="testimonial-dot active"></button>
-                <button class="testimonial-dot"></button>
-                <button class="testimonial-dot"></button>
+
+                {% for testimonial in testimonials %}
+
+                <button class="testimonial-dot {% if forloop.first %}active{% endif %}"></button>
+
+                {% endfor %}
+
               </div>
+
               <button class="testimonial-nav__btn glass-card" id="testimonialNext">
-                <svg fill="none" height="16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                  stroke-width="2" viewbox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg">
+
+                <svg fill="none" height="16" width="16" stroke="currentColor" stroke-linecap="round"
+                  stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24">
+
                   <polyline points="9 18 15 12 9 6"></polyline>
+
                 </svg>
+
               </button>
+
             </div>
+
           </div>
         </section>
         <!-- RESUME -->
@@ -679,143 +609,165 @@
         <!-- PORTFOLIO -->
         <section class="section" data-section="portfolio">
           <h2 class="section__heading">
-            <span class="section__icon"> &plusb; </span>
+            <span class="section__icon">✦</span>
             نمونه کارها
           </h2>
           <div class="portfolio-filters">
             <button class="portfolio-filter active" data-filter="all">
               همه
             </button>
-            <button class="portfolio-filter" data-filter="web">
+            <button class="portfolio-filter" data-filter="security">
               ابزار های هک/امنیت
             </button>
-            <button class="portfolio-filter" data-filter="app">
+            <button class="portfolio-filter" data-filter="web_design">
               طراحی اپلیکیشن/وب
             </button>
-            <button class="portfolio-filter" data-filter="brand">
+            <button class="portfolio-filter" data-filter="telegram_bot">
               ساخت ربات تلگرام
             </button>
           </div>
           <div class="portfolio-grid">
-            <div class="portfolio-card glass-card" data-category="web">
+
+            {% for project in projects %}
+
+            <div class="portfolio-card glass-card" data-category="{{ project.category }}">
+
               <div class="portfolio-card__img-wrap">
-                <img alt="Nebula Dashboard" class="portfolio-card__img" src="{% static 'p1.jpg' %}" />
+
+                <img src="{{ project.image.url }}" alt="{{ project.title }}" class="portfolio-card__img">
+
                 <div class="portfolio-card__overlay">
-                  <span class="portfolio-card__link">
+
+                  {% if project.link %}
+                  <a href="{{ project.link }}" target="_blank" class="portfolio-card__link">
+
                     <svg fill="none" height="16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                      stroke-width="2" viewbox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg">
+                      stroke-width="2" viewBox="0 0 24 24" width="16">
+
                       <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
                       <polyline points="15 3 21 3 21 9"></polyline>
-                      <line x1="10" x2="21" y1="14" y2="3"></line>
+                      <line x1="10" y1="14" x2="21" y2="3"></line>
+
                     </svg>
-                  </span>
+
+                  </a>
+                  {% endif %}
+
                 </div>
+
               </div>
+
               <div class="portfolio-card__body">
-                <p class="portfolio-card__cat">طراحی وب</p>
-                <div class="portfolio-card__title">داشبورد سحابی</div>
-              </div>
-            </div>
-            <div class="portfolio-card glass-card" data-category="app">
-              <div class="portfolio-card__img-wrap">
-                <img alt="Pulse Mobile App" class="portfolio-card__img" src="{% static 'p2.jpg' %}" />
-                <div class="portfolio-card__overlay">
-                  <span class="portfolio-card__link">
-                    <svg fill="none" height="16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                      stroke-width="2" viewbox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-                      <polyline points="15 3 21 3 21 9"></polyline>
-                      <line x1="10" x2="21" y1="14" y2="3"></line>
-                    </svg>
-                  </span>
-                </div>
-              </div>
-              <div class="portfolio-card__body">
-                <p class="portfolio-card__cat">طراحی اپلیکیشن</p>
-                <div class="portfolio-card__title">اپلیکیشن موبایل پالس</div>
-              </div>
-            </div>
-            <div class="portfolio-card glass-card" data-category="brand">
-              <div class="portfolio-card__img-wrap">
-                <img alt="Onyx Brand Identity" class="portfolio-card__img" src="{% static 'p3.jpg' %}" />
-                <div class="portfolio-card__overlay">
-                  <span class="portfolio-card__link">
-                    <svg fill="none" height="16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                      stroke-width="2" viewbox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-                      <polyline points="15 3 21 3 21 9"></polyline>
-                      <line x1="10" x2="21" y1="14" y2="3"></line>
-                    </svg>
-                  </span>
-                </div>
-              </div>
-              <div class="portfolio-card__body">
-                <p class="portfolio-card__cat">برندسازی</p>
-                <div class="portfolio-card__title">هویت برند اونیکس</div>
-              </div>
-            </div>
-            <div class="portfolio-card glass-card" data-category="web">
-              <div class="portfolio-card__img-wrap">
-                <img alt="Aurora E-Commerce" class="portfolio-card__img" src="{% static 'p4.jpg' %}" />
-                <div class="portfolio-card__overlay">
-                  <span class="portfolio-card__link">
-                    <svg fill="none" height="16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                      stroke-width="2" viewbox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-                      <polyline points="15 3 21 3 21 9"></polyline>
-                      <line x1="10" x2="21" y1="14" y2="3"></line>
-                    </svg>
-                  </span>
-                </div>
-              </div>
-              <div class="portfolio-card__body">
-                <p class="portfolio-card__cat">طراحی وب</p>
-                <div class="portfolio-card__title">تجارت الکترونیک آرورا</div>
-              </div>
-            </div>
-            <div class="portfolio-card glass-card" data-category="app">
-              <div class="portfolio-card__img-wrap">
-                <img alt="Zenith Fitness App" class="portfolio-card__img" src="{% static 'p5.jpg' %}" />
-                <div class="portfolio-card__overlay">
-                  <span class="portfolio-card__link">
-                    <svg fill="none" height="16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                      stroke-width="2" viewbox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-                      <polyline points="15 3 21 3 21 9"></polyline>
-                      <line x1="10" x2="21" y1="14" y2="3"></line>
-                    </svg>
-                  </span>
-                </div>
-              </div>
-              <div class="portfolio-card__body">
-                <p class="portfolio-card__cat">طراحی اپلیکیشن</p>
+
+                <p class="portfolio-card__cat">
+
+                  {{ project.get_category_display }}
+
+                </p>
+
                 <div class="portfolio-card__title">
-                  اپلیکیشن تناسب اندام زنیت
+
+                  {{ project.title }}
+
                 </div>
+
               </div>
+
             </div>
-            <div class="portfolio-card glass-card" data-category="brand">
-              <div class="portfolio-card__img-wrap">
-                <img alt="Vertex Rebrand" class="portfolio-card__img" src="{% static 'p6.jpg' %}" />
-                <div class="portfolio-card__overlay">
-                  <span class="portfolio-card__link">
-                    <svg fill="none" height="16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                      stroke-width="2" viewbox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-                      <polyline points="15 3 21 3 21 9"></polyline>
-                      <line x1="10" x2="21" y1="14" y2="3"></line>
-                    </svg>
-                  </span>
-                </div>
-              </div>
-              <div class="portfolio-card__body">
-                <p class="portfolio-card__cat">برندسازی</p>
-                <div class="portfolio-card__title">Vertex Rebrand</div>
-              </div>
-            </div>
+            {% empty %}
+
+            <p>هنوز نمونه کاری ثبت نشده است.</p>
+
+            {% endfor %}
+
           </div>
         </section>
+        <!-- Blog-->
+        <section class="section" data-section="blog">
+          <h2 class="section__heading">
+            <span class="section__icon">✎</span>
+            اخبار/مقالات
+          </h2>
+          <div class="blog-filters">
+            <button class="blog-filter active" data-filter="all">
+              همه
+            </button>
+
+            <button class="blog-filter" data-filter="django">
+              جنگو
+            </button>
+
+            <button class="blog-filter" data-filter="python">
+              پایتون
+            </button>
+
+            <button class="blog-filter" data-filter="security">
+              امنیت
+            </button>
+
+            <button class="blog-filter" data-filter="telegram">
+              تلگرام
+            </button>
+
+            <button class="blog-filter" data-filter="linux">
+              لینوکس
+            </button>
+          </div>
+          <div class="blog-grid">
+
+
+            {% for post in blogs %}
+
+            <div class="blog-card glass-card" data-category="{{ post.category }}">
+              <div class="blog-card__img-wrap">
+
+                <img src="{{ post.image.url }}" alt="{{ post.title }}" class="blog-card__img">
+
+                <div class="blog-card__overlay">
+
+
+                  <a href="{% url 'blog_detail' post.slug %}" class="blog-card__link">
+                    <span>
+                      ادامه مطلب
+                    </span>
+                  </a>
+
+
+                </div>
+
+              </div>
+
+              <div class="blog-card__body">
+
+                <p class="blog-card__cat">
+                  {{ post.get_category_display }}
+                </p>
+
+                <p class="blog__cat">
+                  📅 {{ post.created_at|date:"Y/m/d" }}
+                  &nbsp;&nbsp;
+                  👁 {{ post.views }}
+                </p>
+                <div class="blog-card__title">
+
+                  {{ post.title }}
+
+                </div>
+
+              </div>
+
+            </div>
+            {% empty %}
+
+            <p>هنوز مقاله‌ای منتشر نشده است.</p>
+
+            {% endfor %}
+          </div>
+
+        </section>
         <!-- CONTACT -->
+
+
         <section class="section" data-section="contact">
           <h2 class="section__heading">
             <span class="section__icon" style="color: var(--primary); opacity: 0.7">
@@ -827,13 +779,33 @@
             پروژه ای در ذهن دارید؟ بیایید با هم چیز خارق العاده ای بسازیم.
           </p>
           <div class="contact-layout">
-            <form class="contact-form" onsubmit="event.preventDefault()">
-              <div class="contact-form__row">
-                <input placeholder="نام شما" required="" type="text" />
-                <input placeholder="ایمیل شما" required="" type="email" />
+            <form class="contact-form" method="POST">
+              {% csrf_token %}
+
+              {% if success %}
+              <div class="alert-success" id="success-alert">
+                {{ success }}
               </div>
-              <input placeholder="موضوع" type="text" />
-              <textarea placeholder="پیام شما" rows="5"></textarea>
+
+              <script>
+                setTimeout(function () {
+                  var alertBox = document.getElementById('success-alert');
+                  if (alertBox) {
+                    alertBox.style.transition = "opacity 0.5s ease";
+                    alertBox.style.opacity = "0";
+                    setTimeout(function () {
+                      alertBox.remove();
+                    }, 500);
+                  }
+                }, 5000);
+              </script>
+              {% endif %}
+              <div class="contact-form__row">
+                <input type="text" name="name" placeholder="نام شما" required><input type="email" name="email"
+                  placeholder="ایمیل شما" required>
+              </div>
+              <input type="text" name="subject" placeholder="موضوع"> <textarea name="message" rows="5"
+                placeholder="پیام شما"></textarea>
               <button
                 class="contact-form__submit bg-gradient-to-br from-primary to-secondary text-primary-fg transition-shadow duration-300 hover:shadow-[0_0_30px_color-mix(in_srgb,var(--primary)_40%,transparent)]"
                 type="submit">
@@ -935,6 +907,17 @@
           </svg>
           <span class="side-nav__tooltip"> نمونه کارها </span>
         </button>
+        <button class="side-nav__btn" data-nav="blog">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+            class="lucide lucide-newspaper-icon lucide-newspaper">
+            <path d="M15 18h-5" />
+            <path d="M18 14h-8" />
+            <path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-4 0v-9a2 2 0 0 1 2-2h2" />
+            <rect width="8" height="4" x="10" y="6" rx="1" />
+          </svg>
+          <span class="side-nav__tooltip">اخبار/مقالات</span>
+        </button>
         <button class="side-nav__btn" data-nav="contact">
           <svg fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
             stroke-width="2" viewbox="0 0 24 24" width="18" xmlns="http://www.w3.org/2000/svg">
@@ -985,6 +968,17 @@
         </svg>
         نمونه کارها
       </button>
+      <button class="bottom-nav__btn" data-nav="blog">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+          class="lucide lucide-newspaper-icon lucide-newspaper">
+          <path d="M15 18h-5" />
+          <path d="M18 14h-8" />
+          <path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-4 0v-9a2 2 0 0 1 2-2h2" />
+          <rect width="8" height="4" x="10" y="6" rx="1" />
+        </svg>
+        اخبار / مقالات
+      </button>
       <button class="bottom-nav__btn" data-nav="contact">
         <svg fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
           stroke-width="2" viewbox="0 0 24 24" width="18" xmlns="http://www.w3.org/2000/svg">
@@ -995,7 +989,7 @@
       </button>
     </div>
   </nav>
-  <script src="{% static 'main.js' %}"></script>
+  <script src="{% static 'javascript/main.js' %}"></script>
 </body>
 
 <!-- Mirrored from www.iarsalan.ir/auracv/main-template/index-aurora-onepage.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 05 Jul 2026 16:54:35 GMT -->

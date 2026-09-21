@@ -11,7 +11,7 @@
    ============================================ */
 @font-face {
   font-family: "peyda";
-  src: url('/static/PeydaWebFaNum-Medium.woff2');
+  src: url('/static/font/PeydaWebFaNum-Medium.woff2');
   font-display: swap;
 }
 
@@ -630,6 +630,88 @@ input, textarea { font: inherit; }
 .portfolio-card:hover .portfolio-card__title { color: var(--primary); }
 
 /* ============================================
+   Blog
+   ============================================ */
+.blog-filters {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 2.5rem;
+  flex-wrap: wrap;
+}
+.blog-filter {
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--muted-fg);
+  transition: all 0.3s;
+}
+.blog-filter.active,
+.blog-filter:hover {
+  color: var(--fg);
+  background: var(--surface);
+  border: 1px solid var(--border-hi);
+}
+
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+.blog-card { border-radius: 0.75rem; overflow: hidden; }
+.blog-card__img-wrap {
+  aspect-ratio: 3/2;
+  overflow: hidden;
+  position: relative;
+}
+.blog-card__img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  filter: grayscale(1);
+  opacity: 0.7;
+  transition: all 0.7s ease;
+}
+.blog-card:hover .blog-card__img {
+  filter: grayscale(0);
+  opacity: 1;
+  transform: scale(1.05);
+}
+.blog-card__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+  opacity: 0;
+  transition: opacity 0.3s;
+  display: flex;
+  align-items: flex-end;
+  padding: 1rem;
+}
+.blog-card:hover .blog-card__overlay { opacity: 1; }
+.blog-card__link {
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  background: var(--surface);
+  backdrop-filter: blur(8px);
+  border: 1px solid var(--border);
+  color: var(--fg);
+}
+.blog-card__link svg { width: 16px; height: 16px; }
+.blog-card__body { padding: 1.25rem; }
+.blog-card__cat {
+  font-size: 0.6875rem;
+  color: hsl(187 94% 43% / 0.7);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-bottom: 0.25rem;
+}
+.blog-card__title {
+  font-family: 'peyda', sans-serif;
+  font-weight: 600;
+  transition: color 0.3s;
+}
+.blog-card:hover .blog-card__title { color: var(--primary); }
+
+/* ============================================
    CONTACT
    ============================================ */
 .contact-layout {
@@ -932,4 +1014,50 @@ input, textarea { font: inherit; }
   .services-grid { grid-template-columns: repeat(2, 1fr); }
   .portfolio-grid { grid-template-columns: repeat(2, 1fr); }
   .skills-grid { grid-template-columns: repeat(2, 1fr); }
+}
+/* ============================================
+   Submission Confirmation (Toast Notification)
+   ============================================ */
+.alert-success {
+    position: fixed; 
+    bottom: 30px; 
+    left: 50%; 
+    transform: translateX(-50%); 
+    z-index: 9999; 
+    background: #22c55e;
+    color: #fff;
+    padding: 14px 24px;
+    border-radius: 12px;
+    text-align: center;
+    font-size: 15px;
+    font-weight: 600;
+    box-shadow: 0 10px 30px rgba(34,197,94,0.4);
+    animation: slideUp 0.5s ease forwards;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translate(-50%, 50px);
+    }
+    to {
+        opacity: 1;
+        transform: translate(-50%, 0);
+    }
+}
+
+.portfolio-card{
+    transition:
+        opacity .25s ease,
+        transform .25s ease;
+}
+
+.portfolio-card.show{
+    opacity:1;
+    transform:scale(1);
+}
+
+.portfolio-card.hide{
+    opacity:0;
+    transform:scale(.95);
 }

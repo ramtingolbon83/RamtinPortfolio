@@ -1,0 +1,863 @@
+/* =========================================================
+   Blog Detail
+   CodeVerse Style
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   Root
+   --------------------------------------------------------- */
+
+:root {
+    --bg: hsl(220, 20%, 2%);
+    --fg: hsl(0, 0%, 100%);
+
+    --card-bg: hsl(220, 20%, 4%);
+
+    --primary: hsl(187, 94%, 43%);
+    --primary-fg: hsl(220, 20%, 2%);
+
+    --secondary: hsl(263, 70%, 58%);
+
+    --muted: hsl(220, 15%, 12%);
+    --muted-fg: hsl(0, 0%, 70%);
+
+    --surface: rgba(255, 255, 255, 0.025);
+    --surface-hover: rgba(255, 255, 255, 0.05);
+
+    --border: rgba(255, 255, 255, 0.07);
+    --border-hi: rgba(255, 255, 255, 0.15);
+
+    --text-dim: rgba(255, 255, 255, 0.4);
+    --text-soft: rgba(255, 255, 255, 0.65);
+    --text-bright: rgba(255, 255, 255, 0.95);
+
+    --purple-glow: rgba(124, 58, 237, 0.25);
+    --blue-glow: rgba(37, 99, 235, 0.18);
+
+    --glass-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.55);
+
+    --glass-inset:
+        inset 0 1px 1px rgba(255, 255, 255, 0.07);
+
+    --radius: 1rem;
+}
+
+
+/* ---------------------------------------------------------
+   Body
+   --------------------------------------------------------- */
+
+html {
+    background: var(--bg);
+}
+
+body.aurora-theme {
+    min-height: 100vh;
+
+    margin: 0;
+
+    background:
+        radial-gradient(
+            circle at 85% 5%,
+            rgba(124, 58, 237, 0.10),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 10% 90%,
+            rgba(37, 99, 235, 0.07),
+            transparent 30%
+        ),
+        var(--bg);
+
+    color: var(--fg);
+
+    font-family:
+        "Vazirmatn",
+        "IRANSans",
+        Tahoma,
+        Arial,
+        sans-serif;
+
+    overflow-x: hidden;
+}
+
+
+/* ---------------------------------------------------------
+   Aurora background orbs
+   --------------------------------------------------------- */
+
+/*
+   این دو div در HTML اصلی خودت هستند.
+   رنگ سبز/فیروزه‌ای Aurora را کم می‌کنیم
+   و به سمت بنفش/آبی می‌بریم.
+*/
+
+body.aurora-theme > div[aria-hidden="true"] {
+    opacity: 0.12 !important;
+
+    filter:
+        blur(120px)
+        saturate(130%);
+
+    pointer-events: none;
+}
+
+body.aurora-theme > div[aria-hidden="true"]:first-of-type {
+    background-color: var(--secondary) !important;
+}
+
+body.aurora-theme > div[aria-hidden="true"]:last-of-type {
+    background-color: var(--primary) !important;
+}
+
+
+/* ---------------------------------------------------------
+   Main
+   --------------------------------------------------------- */
+
+.main-content {
+    position: relative;
+
+    z-index: 1;
+
+    width: min(1200px, calc(100% - 48px));
+
+    margin: 40px auto;
+
+    padding: 0 ;
+
+    height: 450px;
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255, 255, 255, 0.035),
+            rgba(255, 255, 255, 0.012)
+        ) !important;
+
+    border:
+        1px solid var(--border) !important;
+
+    border-radius:
+        1.25rem !important;
+
+    box-shadow:
+        var(--glass-shadow),
+        var(--glass-inset);
+
+    overflow: hidden;
+}
+
+
+/* ---------------------------------------------------------
+   Section
+   --------------------------------------------------------- */
+
+.section {
+    width: 100%;
+
+    padding: 0;
+
+    background: transparent;
+}
+
+
+/* ---------------------------------------------------------
+   Hero image
+   --------------------------------------------------------- */
+
+.article-image {
+    display: block;
+
+    width: calc(100% - 600px);
+
+    height: 400px;
+    margin-top: 15px;
+    margin-left: 500px;
+    margin-right:50px;
+    /*margin: 24px auto 0;*/
+
+    object-fit: cover;
+
+    object-position: center;
+
+    border-radius: 1.15rem;
+
+    border:
+        1px solid rgba(139, 92, 246, 0.35);
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(124, 58, 237, 0.2),
+            rgba(37, 99, 235, 0.1)
+        );
+
+    box-shadow:
+        0 0 40px rgba(124, 58, 237, 0.12),
+        0 25px 60px rgba(0, 0, 0, 0.5);
+}
+
+
+/* ---------------------------------------------------------
+   Article title
+   --------------------------------------------------------- */
+
+.section__heading {
+    position: relative;
+
+    width: calc(100% - 48px);
+
+    margin-top:-350px;
+    margin-right: 675px;
+
+    padding-right: 18px;
+
+    color: var(--text-bright) !important;
+
+    font-size:
+        clamp(2rem, 4vw, 3rem);
+
+    font-weight: 800;
+
+    line-height: 1.6;
+
+    text-align: right;
+
+    letter-spacing: -0.02em;
+}
+
+
+/*
+   نوار بنفش کنار عنوان
+*/
+
+.section__heading::before {
+    content: "";
+
+    position: absolute;
+
+    right: 0;
+
+    top: 0.45em;
+
+    width: 5px;
+
+    height: 1.2em;
+
+    border-radius: 999px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #a855f7,
+            #7c3aed
+        );
+
+    box-shadow:
+        0 0 16px
+        rgba(168, 85, 247, 0.6);
+}
+
+
+/* ---------------------------------------------------------
+   Meta
+   --------------------------------------------------------- */
+
+.blog__cat {
+    display: flex;
+
+    align-items: center;
+
+    gap: 170px;
+
+    width: calc(100% - 665px);
+    margin-right: 655px;
+
+    margin-top:210px;
+
+
+    padding:
+        12px 16px;
+
+    box-sizing: border-box;
+
+    color: var(--text-soft) !important;
+
+    font-size: 0.9rem;
+
+    line-height: 1.8;
+
+    text-align: right;
+
+    background:
+        rgba(255, 255, 255, 0.025);
+
+    border:
+        1px solid var(--border);
+
+    border-radius:
+        0.85rem;
+
+    box-shadow:
+        var(--glass-inset);
+}
+
+
+/* ---------------------------------------------------------
+   Article content
+   --------------------------------------------------------- */
+
+.article-content {
+    width: calc(100% - 48px);
+
+    margin-right: 675px;
+    margin-top:-260px;
+    padding:
+        10px 0 60px;
+
+    color: var(--text-soft);
+
+    font-size: 1.05rem;
+
+    line-height: 2.2;
+
+    text-align: right;
+
+    direction: rtl;
+}
+
+
+/* ---------------------------------------------------------
+   Paragraphs
+   --------------------------------------------------------- */
+
+.article-content p {
+    margin:
+        0 0 1.5rem;
+
+    color: var(--text-soft);
+
+    font-size: 1.05rem;
+
+    line-height: 2.2;
+}
+
+
+/* ---------------------------------------------------------
+   Headings
+   --------------------------------------------------------- */
+
+.article-content h2,
+.article-content h3,
+.article-content h4 {
+    position: relative;
+
+    color: var(--text-bright);
+
+    font-weight: 800;
+
+    line-height: 1.7;
+
+    text-align: right;
+}
+
+
+.article-content h2 {
+    margin:
+        3rem 0 1.4rem;
+
+    padding-right: 18px;
+
+    font-size:
+        clamp(1.7rem, 3vw, 2.25rem);
+}
+
+
+.article-content h3 {
+    margin:
+        2.5rem 0 1rem;
+
+    font-size: 1.5rem;
+}
+
+
+/*
+   نوار بنفش کنار h2
+*/
+
+.article-content h2::before {
+    content: "";
+
+    position: absolute;
+
+    right: 0;
+
+    top: 0.35em;
+
+    width: 5px;
+
+    height: 1.3em;
+
+    border-radius: 999px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #a855f7,
+            #7c3aed
+        );
+
+    box-shadow:
+        0 0 15px
+        rgba(168, 85, 247, 0.55);
+}
+
+
+/* ---------------------------------------------------------
+   Links
+   --------------------------------------------------------- */
+
+.article-content a {
+    color:
+        #a78bfa;
+
+    text-decoration: none;
+
+    transition:
+        color 0.2s ease,
+        text-shadow 0.2s ease;
+}
+
+
+.article-content a:hover {
+    color:
+        #c4b5fd;
+
+    text-shadow:
+        0 0 12px
+        rgba(167, 139, 250, 0.45);
+}
+
+
+/* ---------------------------------------------------------
+   Strong / Bold
+   --------------------------------------------------------- */
+
+.article-content strong,
+.article-content b {
+    color:
+        var(--text-bright);
+
+    font-weight: 700;
+}
+
+
+/* ---------------------------------------------------------
+   Lists
+   --------------------------------------------------------- */
+
+.article-content ul,
+.article-content ol {
+    margin:
+        1.5rem 0;
+
+    padding-right: 2rem;
+}
+
+
+.article-content li {
+    margin-bottom:
+        0.7rem;
+
+    color:
+        var(--text-soft);
+}
+
+
+/* ---------------------------------------------------------
+   Blockquote
+   --------------------------------------------------------- */
+
+.article-content blockquote {
+    margin:
+        2rem 0;
+
+    padding:
+        1.2rem 1.5rem ;
+
+    color:
+        var(--text-soft);
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(124, 58, 237, 0.08),
+            rgba(37, 99, 235, 0.04)
+        );
+
+    border-right:
+        4px solid var(--secondary);
+
+    border-radius:
+        0.75rem;
+}
+
+
+/* ---------------------------------------------------------
+   Images inside article
+   --------------------------------------------------------- */
+
+.article-content img {
+    display: block;
+
+    max-width: 100%;
+
+    height: auto;
+
+    margin:
+        2rem auto;
+
+    border-radius:
+        1rem;
+
+    border:
+        1px solid var(--border);
+
+    box-shadow:
+        0 20px 45px rgba(0, 0, 0, 0.4);
+}
+
+
+/* ---------------------------------------------------------
+   Code
+   --------------------------------------------------------- */
+
+.article-content pre {
+    direction: ltr;
+
+    margin:
+        2rem 0;
+
+    padding:
+        1.5rem;
+
+    overflow-x: auto;
+
+    color:
+        #c4b5fd;
+
+    background:
+        linear-gradient(
+            145deg,
+            #0b1020,
+            #070a13
+        );
+
+    border:
+        1px solid rgba(255, 255, 255, 0.08);
+
+    border-radius:
+        1rem;
+
+    box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.45),
+        inset 0 1px 1px
+        rgba(255, 255, 255, 0.05);
+
+    text-align: left;
+}
+
+
+.article-content pre code {
+    color:
+        #c4b5fd;
+
+    background:
+        transparent;
+
+    font-family:
+        "JetBrains Mono",
+        "Fira Code",
+        Consolas,
+        monospace;
+
+    font-size:
+        0.9rem;
+
+    line-height:
+        1.8;
+}
+
+
+.article-content code {
+    padding:
+        0.2rem 0.45rem;
+
+    color:
+        #c4b5fd;
+
+    background:
+        rgba(124, 58, 237, 0.1);
+
+    border-radius:
+        0.35rem;
+
+    font-family:
+        "JetBrains Mono",
+        "Fira Code",
+        Consolas,
+        monospace;
+}
+
+
+/* ---------------------------------------------------------
+   Tables
+   --------------------------------------------------------- */
+
+.article-content table {
+    width: 100%;
+
+    margin:
+        2rem 0;
+
+    border-collapse:
+        separate;
+
+    border-spacing:
+        0;
+
+    overflow: hidden;
+
+    background:
+        var(--surface);
+
+    border:
+        1px solid var(--border);
+
+    border-radius:
+        1rem;
+}
+
+
+.article-content th,
+.article-content td {
+    padding:
+        0.9rem 1rem;
+
+    border-bottom:
+        1px solid var(--border);
+
+    color:
+        var(--text-soft);
+
+    text-align:
+        right;
+}
+
+
+.article-content th {
+    color:
+        var(--text-bright);
+
+    background:
+        rgba(124, 58, 237, 0.08);
+}
+
+
+/* ---------------------------------------------------------
+   Horizontal rule
+   --------------------------------------------------------- */
+
+.article-content hr {
+    margin:
+        3rem 0;
+
+    border:
+        0;
+
+    border-top:
+        1px solid var(--border);
+}
+
+
+/* ---------------------------------------------------------
+   Selection
+   --------------------------------------------------------- */
+
+::selection {
+    color:
+        white;
+
+    background:
+        rgba(124, 58, 237, 0.6);
+}
+
+
+/* ---------------------------------------------------------
+   Scrollbar
+   --------------------------------------------------------- */
+
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+
+::-webkit-scrollbar-track {
+    background:
+        var(--bg);
+}
+
+
+::-webkit-scrollbar-thumb {
+    background:
+        rgba(124, 58, 237, 0.5);
+
+    border-radius:
+        999px;
+}
+
+
+::-webkit-scrollbar-thumb:hover {
+    background:
+        rgba(139, 92, 246, 0.8);
+}
+
+
+/* ---------------------------------------------------------
+   Mobile
+   --------------------------------------------------------- */
+
+@media (max-width: 768px) {
+
+    .main-content {
+        width:
+            calc(100% - 24px);
+
+        margin:
+            12px auto;
+
+        border-radius:
+            1rem;
+    }
+
+
+    .article-image {
+        width:
+            calc(100% - 24px);
+
+        height:
+            320px;
+
+        margin-top:
+            12px;
+
+        border-radius:
+            0.9rem;
+    }
+
+
+    .section__heading {
+        width:
+            calc(100% - 24px);
+
+        margin:
+            22px auto 10px;
+
+        padding-right:
+            14px;
+
+        font-size:
+            1.7rem;
+
+        line-height:
+            1.7;
+    }
+
+
+    .blog__cat {
+        width:
+            calc(100% - 24px);
+
+        font-size:
+            0.8rem;
+    }
+
+
+    .article-content {
+        width:
+            calc(100% - 24px);
+
+        padding-bottom:
+            40px;
+
+        font-size:
+            0.95rem;
+
+        line-height:
+            2;
+    }
+
+
+    .article-content p {
+        font-size:
+            0.95rem;
+
+        line-height:
+            2;
+    }
+
+
+    .article-content h2 {
+        font-size:
+            1.5rem;
+
+        margin-top:
+            2.2rem;
+    }
+
+
+    .article-content h3 {
+        font-size:
+            1.25rem;
+    }
+
+
+    .article-content pre {
+        padding:
+            1rem;
+
+        font-size:
+            0.8rem;
+
+        border-radius:
+            0.75rem;
+    }
+}
+
+
+/* ---------------------------------------------------------
+   Very small screens
+   --------------------------------------------------------- */
+
+@media (max-width: 480px) {
+
+    .article-image {
+        height:
+            250px;
+    }
+
+
+    .section__heading {
+        font-size:
+            1.45rem;
+    }
+
+
+    .blog__cat {
+        flex-wrap:
+            wrap;
+    }
+}

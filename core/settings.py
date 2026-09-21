@@ -1,3 +1,4 @@
+
 """
 Django settings for core project.
 
@@ -9,35 +10,42 @@ https://docs.djangoproject.com/en/6.0/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/6.0/ref/settings/
 """
-
+import os
 from pathlib import Path
+
+from django.templatetags.static import static
+from dotenv import load_dotenv
+from unfold_farsi.settings import apply_unfold_farsi_defaults
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-
+load_dotenv(BASE_DIR/".env")
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/6.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-&=82b0#-go$q4p%8cyh9wh!ebfvdhcp9meo8g)pt+f@$1br!lq'
+SECRET_KEY = os.environ["DJANGO_SECRET_KEY"]
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.environ.get("DJANGO_DEBUG","False")=="True"
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
 
 INSTALLED_APPS = [
+    'unfold',
     'django.contrib.admin',
     'django.contrib.auth',
+    'unfold_farsi',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'main',
+    
 ]
 
 MIDDLEWARE = [
@@ -103,9 +111,9 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/6.0/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'fa-ir'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Tehran'
 
 USE_I18N = True
 
@@ -115,9 +123,68 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/6.0/howto/static-files/
 
-import os
 
 STATIC_URL = 'static/'
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static'),
+    BASE_DIR / "static",
 ]
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+MEDIA_URL = "/media/"
+MEDIA_ROOT = BASE_DIR / "media"
+
+UNFOLD = apply_unfold_farsi_defaults( {
+    "SITE_TITLE": "پنل مدیریت",
+    "SITE_HEADER": "پنل مدیریت",
+    "SHOW_HISTORY": True,
+    "SHOW_LANGUAGES": False,
+    "SIDEBAR": {
+        "show_search": True,
+        "show_all_applications": True,
+    },
+    "COLORS": {
+        "base": {
+            "50": "oklch(97.8% .006 60)",
+            "100": "oklch(94.5% .012 55)",
+            "200": "oklch(88.5% .018 50)",
+            "300": "oklch(78% .025 45)",
+            "400": "oklch(64% .03 40)",
+            "500": "oklch(50% .035 38)",
+            "600": "oklch(40% .035 36)",
+            "700": "oklch(32% .03 34)",
+            "800": "oklch(24% .025 32)",
+            "900": "oklch(17% .02 30)",
+            "950": "oklch(11% .015 28)",
+        },
+        "primary": {
+            "50": "oklch(96% .025 195)",
+            "100": "oklch(91% .045 193)",
+            "200": "oklch(83% .07 191)",
+            "300": "oklch(73% .09 189)",
+            "400": "oklch(62% .1 187)",
+            "500": "oklch(52% .095 185)",
+            "600": "oklch(44% .085 184)",
+            "700": "oklch(37% .07 183)",
+            "800": "oklch(30% .055 182)",
+            "900": "oklch(24% .04 181)",
+            "950": "oklch(16% .03 180)",
+        },
+        "font": {
+            "subtle-light": "var(--color-base-500)",
+            "subtle-dark": "var(--color-base-400)",
+            "default-light": "var(--color-base-700)",
+            "default-dark": "var(--color-base-200)",
+            "important-light": "var(--color-base-900)",
+            "important-dark": "var(--color-base-50)",
+        },
+    },
+},
+ static=static,
+)
+JALALI_DATE_DEFAULTS = {
+    "LIST_DISPLAY_AUTO_CONVERT": True,
+    "Strftime": {
+        "date": "%y/%m/%d",
+        "datetime": "%H:%M:%S _ %y/%m/%d",
+    },
+}

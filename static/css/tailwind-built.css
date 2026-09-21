@@ -348,13 +348,10 @@ input:where([type='button']),
 input:where([type='reset']),
 input:where([type='submit']) {
   -webkit-appearance: button;
-  /* 1 */
+  appearance: button;
   background-color: transparent;
-  /* 2 */
   background-image: none;
-  /* 2 */
 }
-
 /*
 Use the modern Firefox focus style for all focusable elements.
 */
@@ -395,9 +392,8 @@ Correct the cursor style of increment and decrement buttons in Safari.
 
 [type='search'] {
   -webkit-appearance: textfield;
-  /* 1 */
+  appearance: textfield;
   outline-offset: -2px;
-  /* 2 */
 }
 
 /*
@@ -616,6 +612,14 @@ video {
 }
 
 .portfolio-filter.active {
+  color: var(--fg);
+  background-color: var(--surface);
+  border-width: 1px;
+  border-style: solid;
+  border-color: var(--border-hi);
+}
+
+.blog-filter.active {
   color: var(--fg);
   background-color: var(--surface);
   border-width: 1px;
