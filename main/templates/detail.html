@@ -1,67 +1,51 @@
-{% load static %}
-
+{% load static blog_extras %}
 <!doctype html>
 <html dir="rtl" lang="fa">
 
 <head>
-
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>{{ post.title }}</title>
+    <title>{{ post.title }} | رامتین گل بن</title>
+    <meta name="description" content="{{ post.content|striptags|truncatechars:150 }}">
 
     <link href="{% static 'css/style.css' %}" rel="stylesheet">
     <link href="{% static 'css/theme-aurora.css' %}" rel="stylesheet">
     <link href="{% static 'css/tailwind-built.css' %}" rel="stylesheet">
     <link href="{% static 'css/blog-detail.css' %}" rel="stylesheet">
-
 </head>
-
 
 <body class="aurora-theme">
 
-
-    <!-- بک گراند سایت -->
     <div aria-hidden="true"
         class="pointer-events-none fixed z-0 h-[500px] w-[500px] -left-[4%] -top-[6%] animate-orbit rounded-full bg-primary opacity-40 blur-[120px] mix-blend-screen saturate-150">
     </div>
-
-
     <div aria-hidden="true"
         class="pointer-events-none fixed z-0 h-[500px] w-[500px] -bottom-[6%] -right-[4%] animate-orbit-reverse rounded-full bg-secondary opacity-40 blur-[120px] mix-blend-screen saturate-150">
     </div>
 
+    <main class="main-content glass article-page">
+        <article>
 
+            <a href="{% url 'home' %}" class="article__back">→ بازگشت به صفحه اصلی</a>
 
-    <main class="main-content glass">
+            <header class="article__header">
+                <div class="article__info">
+                    <p class="article__cat">{{ post.get_category_display }}</p>
+                    <h1 class="article__title">{{ post.title }}</h1>
+                    <p class="article__meta">
+                        <span>📅 {{ post.created_at|date:"Y/m/d" }}</span>
+                        <span>👁 {{ post.views }}</span>
+                    </p>
+                </div>
+                <img src="{{ post.image.url }}" alt="{{ post.title }}" class="article__image">
+            </header>
 
-        <section class="section">
-
-
-            <img src="{{ post.image.url }}" alt="{{ post.title }}" class="article-image">
-
-
-            <h1 class="section__heading">
-                {{ post.title }}
-            </h1>
-
-
-            <p class="blog__cat">
-                <span>📅 {{ post.created_at|date:"Y/m/d" }}</span>
-                <span>👁 {{ post.views }}</span>
-            </p>
             <div class="article-content">
-
-                {{ post.content }}
-
+                {{ post.content|markdown }}
             </div>
 
-
-        </section>
-
+        </article>
     </main>
-
-
 
 </body>
 
