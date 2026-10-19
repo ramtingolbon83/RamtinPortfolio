@@ -1,41 +1,51 @@
-#!/usr/bin/env python3
+import time
+
+from django.conf import settings
+from django.contrib import messages
 from django.db.models import F
-from django.shortcuts import get_object_or_404, render
+from django.shortcuts import get_object_or_404, redirect, render
 
-from .models import BlogPost, ContactMessage, Project, Testimonial
+from .forms import ContactForm
+from .models import BlogPost, Project, Testimonial
+from .utils import calculate_age, should_count_view
 
-# Create your views here.
+THROTTLE_SECONDS = 30
 
 
 def home(request):
-    success_message = None
     if request.method == "POST":
-        ContactMessage.objects.create(
-            name=request.POST.get("name"),
-            email=request.POST.get("email"),
-            subject=request.POST.get("subject"),
-            message=request.POST.get("message"),
-        )
-        success_message = "پیام شما با موفقیت ارسال شد"
-    projects = Project.objects.all()
-    testimonials = Testimonial.objects.filter(status="approved")
-    blogs = BlogPost.objects.filter(status="published")
+        form = ContactForm(request.POST)
+        last = request.session.get("last_contact", 0)
+
+        if time.time() - last < THROTTLE_SECONDS:
+            messages.error(request, "لطفاً چند لحظه صبر کنید و دوباره تلاش کنید")
+        elif form.is_valid():
+            # اگر honeypot پر باشد، ربات است: بی‌صدا نادیده می‌گیریم
+            if not form.cleaned_data["website"]:
+                form.save()
+            request.session["last_contact"] = time.time()
+            messages.success(request, "پیام شما با موفقیت ارسال شد")
+            return redirect("home")
+        else:
+            messages.error(request, "لطفاً فرم را درست پر کنید")
+    else:
+        form = ContactForm()
 
     context = {
-        "projects": projects,
-        "testimonials": testimonials,
-        "blogs": blogs,
-        "success": success_message,
+        "projects": Project.objects.prefetch_related("extra_images"),
+        "testimonials": Testimonial.objects.filter(status="approved"),
+        "blogs": BlogPost.objects.filter(status="published"),
+        "form": form,
+        "age": calculate_age(settings.BIRTH_DATE) if settings.BIRTH_DATE else None,
     }
-
     return render(request, "index.html", context)
 
 
 def blog_detail(request, slug):
     post = get_object_or_404(BlogPost, slug=slug, status="published")
 
-    post.views = F("views") + 1
-    post.save(update_fields=["views"])
-    post.refresh_from_db(fields=["views"])
+    if should_count_view(request, post.pk):
+        BlogPost.objects.filter(pk=post.pk).update(views=F("views") + 1)
+        post.refresh_from_db(fields=["views"])
 
     return render(request, "detail.html", {"post": post})
