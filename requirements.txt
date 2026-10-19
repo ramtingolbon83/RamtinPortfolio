@@ -8,5 +8,6 @@ jdatetime==6.1.1
 Markdown==3.11.1
 pillow==12.3.0
 python-dotenv==1.2.3
+ruff==0.17.1
 setuptools==84.0.0
 sqlparse==0.6.0
