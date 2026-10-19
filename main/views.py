@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 import time
 
 from django.conf import settings

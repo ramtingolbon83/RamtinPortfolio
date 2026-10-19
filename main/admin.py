@@ -19,7 +19,7 @@ class ProjectAdmin(ModelAdmin):
     list_display = ("title", "category")
     list_filter = ("category",)
     search_fields = ("title",)
-    inlines = [ProjectImageInline]
+    inlines: ClassVar[list] = [ProjectImageInline]
 
 
 @admin.register(Testimonial)
