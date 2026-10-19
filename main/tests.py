@@ -176,22 +176,21 @@ class ModelTests(TestCase):
         self.assertEqual(post.views, 0)
         self.assertEqual(str(post), "Test Article")
 
-
-def test_blog_post_slug_must_be_unique(self):
-    BlogPost.objects.create(
-        title="First Article",
-        slug="same-slug",
-        content="First content",
-        image="blog/first.png",
-    )
-
-    with self.assertRaises(IntegrityError), transaction.atomic():
+    def test_blog_post_slug_must_be_unique(self):
         BlogPost.objects.create(
-            title="Second Article",
+            title="First Article",
             slug="same-slug",
-            content="Second content",
-            image="blog/second.png",
+            content="First content",
+            image="blog/first.png",
         )
+
+        with self.assertRaises(IntegrityError), transaction.atomic():
+            BlogPost.objects.create(
+                title="Second Article",
+                slug="same-slug",
+                content="Second content",
+                image="blog/second.png",
+            )
 
 
 class HomeViewTests(TestCase):
